@@ -1,0 +1,6 @@
+sequenceDiagram
+    participant P as Programme principal
+    participant M as moyenne(a, b)
+    P->>M: moyenne(12, 15) donc a ← 12 et b ← 15
+    M-->>P: RENVOYER (a + b) / 2, soit 13.5
+    Note over P: AFFICHER 13.5

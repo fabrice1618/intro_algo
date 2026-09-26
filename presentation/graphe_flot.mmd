@@ -1,0 +1,6 @@
+flowchart TD
+    n1["1 : Lire x"] --> n2{"2 : x > 0 ?"}
+    n2 -- oui --> n3["3 : Afficher Positif"]
+    n2 -- non --> n4["4 : Afficher Négatif"]
+    n3 --> n5["5 : Afficher Fin"]
+    n4 --> n5

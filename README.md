@@ -58,4 +58,6 @@ flowchart TD
 | [12 - Complexité algorithmique](12_complexite_algorithmique.md) | Notation grand O, règles de calcul, meilleur / pire cas, complexité spatiale, mesure | [fiche 12](exercices/12_complexite_algorithmique.md) |
 | [13 - Complexité cyclomatique](13_complexite_cyclomatique.md) | Calcul, graphe de flot, interprétation, réduction, lien avec les tests | [fiche 13](exercices/13_complexite_cyclomatique.md) |
 
+Support de présentation : [presentation.md](presentation.md), au format [Marp](https://marp.app) ; ses diagrammes sont dans [presentation](presentation/) (sources mermaid `.mmd` et rendus `.svg`).
+
 Les algorithmes présentés dans le cours sont dans le dossier [exemples](exemples/), préfixés par le numéro du chapitre. Les exercices, leur progression et les solutions : [exercices/README.md](exercices/README.md).

@@ -1,0 +1,5 @@
+flowchart TD
+    si{"temperature < 50 ?"} -- vrai --> alors[Afficher OK]
+    si -- faux --> sinon[Afficher Arrêt système]
+    alors --> suite[Suite de l'algorithme]
+    sinon --> suite

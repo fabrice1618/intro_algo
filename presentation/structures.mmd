@@ -1,0 +1,17 @@
+flowchart LR
+    subgraph sequentielle[Séquentielle]
+        direction TB
+        i1[Instruction 1] --> i2[Instruction 2] --> i3[Instruction 3]
+    end
+    subgraph conditionnelle[Conditionnelle]
+        direction TB
+        c{Condition ?} -- vrai --> ba[Bloc A]
+        c -- faux --> bb[Bloc B]
+    end
+    subgraph iterative[Itérative]
+        direction TB
+        t{Continuer ?} -- oui --> corps[Bloc répété]
+        corps --> t
+        t -- non --> suite[Suite]
+    end
+    sequentielle ~~~ conditionnelle ~~~ iterative

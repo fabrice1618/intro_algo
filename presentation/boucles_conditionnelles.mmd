@@ -1,0 +1,14 @@
+flowchart LR
+    subgraph tq["TANT_QUE : test avant"]
+        direction TB
+        t1{"Condition vraie ?"} -- oui --> c1[Instructions]
+        c1 --> t1
+        t1 -- non --> s1[Suite]
+    end
+    subgraph ftq["FAIRE ... TANT_QUE : test après"]
+        direction TB
+        c2[Instructions] --> t2{"Condition vraie ?"}
+        t2 -- oui --> c2
+        t2 -- non --> s2[Suite]
+    end
+    tq ~~~ ftq

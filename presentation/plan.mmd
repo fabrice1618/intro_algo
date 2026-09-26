@@ -1,0 +1,15 @@
+flowchart TD
+    subgraph comprendre["1. Comprendre"]
+        direction LR
+        c01[01 Introduction] --> c02[02 Définitions] --> c03[03 Pseudo code] --> c04[04 Méthode]
+    end
+    subgraph programmer["2. Programmer avec AlgoFab"]
+        direction LR
+        c05[05 Variables] --> c06[06 Lecture, calculs, écriture] --> c07[07 Conditions] --> c08[08 Boucles]
+        c08 --> c09[09 Tableaux] --> c10[10 Fonctions] --> c11[11 Chaînes]
+    end
+    subgraph evaluer["3. Évaluer un algorithme"]
+        direction LR
+        c12[12 Complexité algorithmique] --> c13[13 Complexité cyclomatique]
+    end
+    comprendre --> programmer --> evaluer

@@ -1,0 +1,11 @@
+flowchart LR
+    debut([Début]) --> reste{"Reste-t-il<br/>un objet ?"}
+    reste -- non --> fin([Fin])
+    reste -- oui --> prendre[Prendre un objet]
+    prendre --> regrouper["Regrouper par type,<br/>puis par fonction"]
+    regrouper --> trier[Trier par taille]
+    trier --> casier{"Le casier<br/>existe ?"}
+    casier -- non --> creer[Créer le casier]
+    creer --> ranger[Ranger l'objet]
+    casier -- oui --> ranger
+    ranger --> reste

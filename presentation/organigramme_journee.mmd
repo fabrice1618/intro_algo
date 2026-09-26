@@ -1,0 +1,9 @@
+flowchart TD
+    debut([Début]) --> agenda["Prendre l'agenda, aller à aujourd'hui"]
+    agenda --> tache{"Il y a une tâche ?"}
+    tache -- oui --> lire[/Lire la tâche/]
+    lire --> realiser[Réaliser la tâche]
+    realiser --> suivante[Passer à la tâche suivante]
+    suivante --> tache
+    tache -- non --> fermer[Fermer l'agenda]
+    fermer --> fin([Fin])

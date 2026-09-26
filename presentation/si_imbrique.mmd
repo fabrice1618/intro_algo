@@ -1,0 +1,5 @@
+flowchart TD
+    t1{"age < 12 ?"} -- vrai --> enfant[Tarif enfant]
+    t1 -- faux --> t2{"age < 65 ?"}
+    t2 -- vrai --> plein[Tarif plein]
+    t2 -- faux --> senior[Tarif senior]

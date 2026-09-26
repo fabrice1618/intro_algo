@@ -1,0 +1,6 @@
+flowchart TD
+    init["index ← valeur_debut"] --> test{"index <= valeur_fin ?"}
+    test -- oui --> corps[Instructions]
+    corps --> incr["index ← index + 1"]
+    incr --> test
+    test -- non --> suite[Suite de l'algorithme]

@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant P as Programme
+    participant F3 as factorielle(3)
+    participant F2 as factorielle(2)
+    participant F1 as factorielle(1)
+    P->>F3: factorielle(3)
+    F3->>F2: 3 * factorielle(2)
+    F2->>F1: 2 * factorielle(1)
+    F1-->>F2: RENVOYER 1 (cas d'arrêt)
+    F2-->>F3: RENVOYER 2 * 1 = 2
+    F3-->>P: RENVOYER 3 * 2 = 6

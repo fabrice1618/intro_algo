@@ -1,0 +1,5 @@
+flowchart LR
+    q1{"Nombre de tours connu<br/>avant de commencer ?"} -- oui --> pour[POUR]
+    q1 -- non --> q2{"Faut-il faire au moins<br/>un tour ?"}
+    q2 -- oui --> faire[FAIRE ... TANT_QUE]
+    q2 -- non --> tantque[TANT_QUE]
