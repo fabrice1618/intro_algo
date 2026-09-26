@@ -33,7 +33,7 @@ Cet exercice a pour but de manipuler les tableaux, les boucles et les conditions
 - Moyenne : 30.2
 
 ## Remarques :
-- Pour générer un nombre aléatoire dans Algobox, vous pouvez utiliser la fonction ALGOBOX_ALEA_ENT(p,n) qui renvoie un entier pseudo-aléatoire compris entre p et n. 
+- Pour générer un nombre aléatoire dans AlgoFab, vous pouvez utiliser la fonction randint(p, n) qui renvoie un entier pseudo-aléatoire compris entre p et n. 
 
 
 ### Exercice 2 : Remplir un tableau avec des nombres aléatoires, puis rechercher les valeurs minimum et maximum demandées
@@ -116,23 +116,26 @@ Cet exercice vous permet de comprendre comment calculer la racine carrée d'un n
 - Nombre : 20
 - Racine carrée : 4
 
-#### Solution Algobox :
-```algobox
-DEBUT
-    Ecrire "Entrez un nombre : "
-    Lire nombre
-    
-    racine <- 0
-    compteur <- 1
-    
-    TantQue nombre >= compteur
-        nombre <- nombre - compteur
-        compteur <- compteur + 2
-        racine <- racine + 1
-    FinTantQue
-
-    Ecrire "La racine carrée entière est : ", racine
-FIN
+#### Solution AlgoFab :
+```
+VARIABLES
+  n EST_DU_TYPE NOMBRE
+  racine EST_DU_TYPE NOMBRE
+  compteur EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Entrez un nombre : "
+  LIRE n
+  racine PREND_LA_VALEUR 0
+  compteur PREND_LA_VALEUR 1
+  TANT_QUE (n >= compteur) FAIRE
+    DEBUT_TANT_QUE
+    n PREND_LA_VALEUR n - compteur
+    compteur PREND_LA_VALEUR compteur + 2
+    racine PREND_LA_VALEUR racine + 1
+    FIN_TANT_QUE
+  AFFICHER "La racine carrée entière est : "
+  AFFICHER racine ↵
+FIN_ALGORITHME
 ```
 
 #### Explication de la méthode :

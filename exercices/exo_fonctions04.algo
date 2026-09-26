@@ -1,0 +1,301 @@
+{
+  "format": 3,
+  "titre": "exo_fonctions04",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": [
+        {
+          "type": 201,
+          "params": [
+            "calcul_pi",
+            "denominateur_max:NOMBRE",
+            "NOMBRE"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": [
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "somme"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "denominateur"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "signe"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "somme",
+                "0",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "denominateur",
+                "1",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 15,
+              "params": [
+                "denominateur <= denominateur_max"
+              ],
+              "children": [
+                {
+                  "type": 16,
+                  "params": [
+                    "debuttantque"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 6,
+                  "params": [
+                    "denominateur % 4 == 1"
+                  ],
+                  "children": [
+                    {
+                      "type": 7,
+                      "params": [
+                        "debutsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 5,
+                      "params": [
+                        "signe",
+                        "1",
+                        "pasliste"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 8,
+                      "params": [
+                        "finsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 9,
+                      "params": [
+                        "sinon"
+                      ],
+                      "children": [
+                        {
+                          "type": 10,
+                          "params": [
+                            "debutsinon"
+                          ],
+                          "children": []
+                        },
+                        {
+                          "type": 5,
+                          "params": [
+                            "signe",
+                            "-1",
+                            "pasliste"
+                          ],
+                          "children": []
+                        },
+                        {
+                          "type": 11,
+                          "params": [
+                            "finsinon"
+                          ],
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "somme",
+                    "somme + signe * (1 / denominateur)",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "denominateur",
+                    "denominateur + 2",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 17,
+                  "params": [
+                    "fintantque"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "4 * somme"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "num_denominateur"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "val_pi"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Plus grand dénominateur : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "num_denominateur",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "num_denominateur",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "val_pi",
+            "calcul_pi(num_denominateur)",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Valeur calculée = \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "val_pi",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

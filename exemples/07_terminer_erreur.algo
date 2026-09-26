@@ -1,0 +1,164 @@
+{
+  "format": 3,
+  "titre": "07_terminer_erreur",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "dividende"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "diviseur"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 2,
+          "params": [
+            "dividende",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "diviseur",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 6,
+          "params": [
+            "diviseur == 0"
+          ],
+          "children": [
+            {
+              "type": 7,
+              "params": [
+                "debutsi"
+              ],
+              "children": []
+            },
+            {
+              "type": 22,
+              "params": [
+                "\"La division par zéro est impossible\""
+              ],
+              "children": []
+            },
+            {
+              "type": 8,
+              "params": [
+                "finsi"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 6,
+          "params": [
+            "dividende == 0"
+          ],
+          "children": [
+            {
+              "type": 7,
+              "params": [
+                "debutsi"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\"Le résultat est 0\"",
+                "1"
+              ],
+              "children": []
+            },
+            {
+              "type": 21,
+              "params": [],
+              "children": []
+            },
+            {
+              "type": 8,
+              "params": [
+                "finsi"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Le résultat est \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "dividende / diviseur",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

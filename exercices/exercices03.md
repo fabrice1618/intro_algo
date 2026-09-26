@@ -7,40 +7,46 @@
 Il est possible de concaténer des chaînes : a et b étant des variables du type CHAINE
 
 ```
-b prend la valeur a + "bonjour" 
+b PREND_LA_VALEUR a + "bonjour"
 ```
 
 ### substr
 
-Il est possible d'extraire le contenu d'une chaîne avec l'instruction:
+Il est possible d'extraire le contenu d'une chaîne avec la fonction :
 
 ```
-chaîne.substr(position_premier_caractère_à_extraire,nombre_de_caractères_à_extraire).
+substr(chaîne, position_premier_caractère_à_extraire, nombre_de_caractères_à_extraire)
 ```
 
 Attention : la premier caractère a pour position 0 (et pas 1)
 
-Exemple : b prend la valeur a.substr(4,2) (b sera alors formé des 5ème et 6ème caractères de a ; a et b étant des variables du type CHAINE)
+Exemple : b PREND_LA_VALEUR substr(a, 4, 2) (b sera alors formé des 5ème et 6ème caractères de a ; a et b étant des variables du type CHAINE)
 
-### toString
+### tostring
 
-Un nombre peut-être transformé en chaîne avec l'instruction nombre.toString()
-Exemple : machaine prend la valeur nb.toString() (nb étant une variable du type NOMBRE et machaine étant une variable du type CHAINE)
+Un nombre peut-être transformé en chaîne avec la fonction tostring(nombre)
+Exemple : machaine PREND_LA_VALEUR tostring(nb) (nb étant une variable du type NOMBRE et machaine étant une variable du type CHAINE)
 
 ### length
 
-La longueur d'une chaine peut-être obtenue avec l'instruction chaine.length
-Exemple : longueur prend la valeur machaine.length (longueur étant une variable du type NOMBRE et machaine étant une variable du type CHAINE)
+La longueur d'une chaine peut-être obtenue avec la fonction length(chaine)
+Exemple : longueur PREND_LA_VALEUR length(machaine) (longueur étant une variable du type NOMBRE et machaine étant une variable du type CHAINE)
 
-### charCodeAt
+### charat
 
-L'instruction machaine.charCodeAt(pos) permet d'obtenir le nombre égal au code ASCII de la lettre figurant à la position pos dans la chaine machaine 
+La fonction charat(machaine, pos) renvoie le caractère figurant à la position pos dans la chaine machaine.
 
 Attention : le premier caractère a pour position 0.
 
-### fromCharCode
+### asc
 
-Inversement, l'instruction String.fromCharCode(nombre) renvoie une chaine contenant le caractère dont le code ascii est égal à nombre.
+La fonction asc(caractere) renvoie le nombre égal au code ASCII du caractère. Le code ASCII de la lettre figurant à la position pos dans la chaine machaine s'obtient avec asc(charat(machaine, pos)).
+
+### char
+
+Inversement, la fonction char(nombre) renvoie une chaine contenant le caractère dont le code ascii est égal à nombre.
+
+Voir le chapitre [11 - Chaînes de caractères](../11_chaines_de_caracteres.md) pour des exemples complets.
 
 
 ## Exercice 1:

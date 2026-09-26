@@ -1,0 +1,631 @@
+{
+  "format": 3,
+  "titre": "exo_tableau02",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_tirages"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_joueurs"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "t"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "j"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "total"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "maxi_tirage"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "maxi_joueur"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "LISTE",
+            "victoires"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "top_victoires"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "top_joueur"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "index"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "LISTE",
+            "tirages"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 19,
+          "params": [
+            "Paramétrage de la partie"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Nombre de tirages : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "nb_tirages",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "nb_tirages",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Nombre de joueurs : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "nb_joueurs",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "nb_joueurs",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 19,
+          "params": [
+            "Initialiser le nombre de victoires (joueurs numérotés à partir de 0)"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "j",
+            "0",
+            "nb_joueurs - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "victoires",
+                "0",
+                "j"
+              ],
+              "children": []
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 19,
+          "params": [
+            "Phase 1 : faire les tirages. Ligne t, colonne j -> tirages[t * nb_joueurs + j]"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "t",
+            "0",
+            "nb_tirages - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 12,
+              "params": [
+                "j",
+                "0",
+                "nb_joueurs - 1",
+                "1"
+              ],
+              "children": [
+                {
+                  "type": 13,
+                  "params": [
+                    "debutpour"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "total",
+                    "randint(1, 6) + randint(1, 6)",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "index",
+                    "t * nb_joueurs + j",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "tirages",
+                    "total",
+                    "index"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 14,
+                  "params": [
+                    "finpour"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 19,
+          "params": [
+            "Phase 2 : rechercher le gagnant de chaque tirage"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "t",
+            "0",
+            "nb_tirages - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "maxi_tirage",
+                "0",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "maxi_joueur",
+                "0",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 12,
+              "params": [
+                "j",
+                "0",
+                "nb_joueurs - 1",
+                "1"
+              ],
+              "children": [
+                {
+                  "type": 13,
+                  "params": [
+                    "debutpour"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "index",
+                    "t * nb_joueurs + j",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 6,
+                  "params": [
+                    "tirages[index] > maxi_tirage"
+                  ],
+                  "children": [
+                    {
+                      "type": 7,
+                      "params": [
+                        "debutsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 5,
+                      "params": [
+                        "maxi_tirage",
+                        "tirages[index]",
+                        "pasliste"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 5,
+                      "params": [
+                        "maxi_joueur",
+                        "j",
+                        "pasliste"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 8,
+                      "params": [
+                        "finsi"
+                      ],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": 14,
+                  "params": [
+                    "finpour"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 5,
+              "params": [
+                "victoires",
+                "victoires[maxi_joueur] + 1",
+                "maxi_joueur"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\"Tirage \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "t + 1",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\" joueur \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "maxi_joueur + 1",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\" total \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "maxi_tirage",
+                "1"
+              ],
+              "children": []
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 19,
+          "params": [
+            "Rechercher le gagnant de la partie"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "top_victoires",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "top_joueur",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "j",
+            "0",
+            "nb_joueurs - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "victoires[j] > top_victoires"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "top_victoires",
+                    "victoires[j]",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "top_joueur",
+                    "j",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Top joueur \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "top_joueur + 1",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\" victoires \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "top_victoires",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

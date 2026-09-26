@@ -1,0 +1,193 @@
+{
+  "format": 3,
+  "titre": "08_tant_que_mot_de_passe",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "mot_passe"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "essai_password"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "BOOLEEN",
+            "valide"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 5,
+          "params": [
+            "valide",
+            "FAUX",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "mot_passe",
+            "\"SECRET\"",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 15,
+          "params": [
+            "valide == FAUX"
+          ],
+          "children": [
+            {
+              "type": 16,
+              "params": [
+                "debuttantque"
+              ],
+              "children": []
+            },
+            {
+              "type": 2,
+              "params": [
+                "essai_password",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "essai_password == mot_passe"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\"OK\"",
+                    "1"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "valide",
+                    "VRAI",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 9,
+                  "params": [
+                    "sinon"
+                  ],
+                  "children": [
+                    {
+                      "type": 10,
+                      "params": [
+                        "debutsinon"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 20,
+                      "params": [
+                        "\"Echec\"",
+                        "1"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 11,
+                      "params": [
+                        "finsinon"
+                      ],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": 17,
+              "params": [
+                "fintantque"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}
