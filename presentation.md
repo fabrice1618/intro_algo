@@ -1,7 +1,6 @@
 ---
 marp: true
 theme: default
-class: invert
 paginate: true
 lang: fr
 footer: Introduction à l'algorithmie
@@ -13,7 +12,7 @@ style: |
   section.chapitre h1 { font-size: 64px; }
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 <!-- _paginate: false -->
 <!-- _footer: "" -->
 
@@ -45,7 +44,7 @@ Exemples et solutions du cours : fichiers `.algo`, menu **Algorithmes → Ouvrir
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 01
 
@@ -97,7 +96,7 @@ Un ordinateur plus puissant ne rend pas un algorithme inefficace efficace.
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 02
 
@@ -133,7 +132,7 @@ AlgoFab est un **interpréteur** : il exécute l'algorithme pas à pas.
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 03
 
@@ -179,7 +178,7 @@ FIN TANT QUE
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 04
 
@@ -240,7 +239,7 @@ Fichier : `exemples/04_tension.algo`
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 05
 
@@ -288,7 +287,7 @@ Une variable ne contient **qu'une valeur à la fois**. L'exécution pas à pas d
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 06
 
@@ -356,7 +355,7 @@ Saisie `2` → `Aire : 12.57`
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 07
 
@@ -417,7 +416,7 @@ Arrêt immédiat de l'algorithme :
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 08
 
@@ -483,7 +482,7 @@ Pour **chaque** tour de la boucle extérieure, la boucle intérieure fait **tous
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 09
 
@@ -553,7 +552,7 @@ tableau[li * nb_colonnes + col] PREND_LA_VALEUR 12
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 10
 
@@ -599,7 +598,7 @@ Une fonction qui s'appelle elle-même a besoin d'un **cas d'arrêt** atteint à 
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 11
 
@@ -637,7 +636,7 @@ Une fonction qui s'appelle elle-même a besoin d'un **cas d'arrêt** atteint à 
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 12
 
@@ -698,7 +697,7 @@ Dans AlgoFab :
 
 ---
 
-<!-- _class: invert chapitre -->
+<!-- _class: chapitre -->
 
 # 13
 
