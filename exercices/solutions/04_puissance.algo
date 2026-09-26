@@ -1,0 +1,111 @@
+{
+  "format": 3,
+  "titre": "04_puissance",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "tension"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "intensite"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "puissance"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 5,
+          "params": [
+            "tension",
+            "230",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "intensite",
+            "10",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "puissance",
+            "tension * intensite",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "puissance",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

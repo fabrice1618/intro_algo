@@ -1,0 +1,204 @@
+{
+  "format": 3,
+  "titre": "12_pythagore_n2",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "a"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "b"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "c"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 12,
+          "params": [
+            "a",
+            "1",
+            "99",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 12,
+              "params": [
+                "b",
+                "a + 1",
+                "99",
+                "1"
+              ],
+              "children": [
+                {
+                  "type": 13,
+                  "params": [
+                    "debutpour"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 19,
+                  "params": [
+                    "c est calculé au lieu d'être cherché par une 3e boucle"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "c",
+                    "sqrt(a * a + b * b)",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 6,
+                  "params": [
+                    "c == int(c) ET c < 100"
+                  ],
+                  "children": [
+                    {
+                      "type": 7,
+                      "params": [
+                        "debutsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 20,
+                      "params": [
+                        "a",
+                        "0"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 20,
+                      "params": [
+                        "\" \"",
+                        "0"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 20,
+                      "params": [
+                        "b",
+                        "0"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 20,
+                      "params": [
+                        "\" \"",
+                        "0"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 20,
+                      "params": [
+                        "c",
+                        "1"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 8,
+                      "params": [
+                        "finsi"
+                      ],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": 14,
+                  "params": [
+                    "finpour"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

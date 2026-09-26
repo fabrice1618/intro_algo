@@ -1,0 +1,284 @@
+{
+  "format": 3,
+  "titre": "10_nombres_premiers",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": [
+        {
+          "type": 201,
+          "params": [
+            "est_premier",
+            "n:NOMBRE",
+            "BOOLEEN"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": [
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "diviseur"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "n < 2"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 205,
+                  "params": [
+                    "FAUX"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 5,
+              "params": [
+                "diviseur",
+                "2",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 19,
+              "params": [
+                "inutile de chercher un diviseur au-delà de la racine carrée de n"
+              ],
+              "children": []
+            },
+            {
+              "type": 15,
+              "params": [
+                "diviseur * diviseur <= n"
+              ],
+              "children": [
+                {
+                  "type": 16,
+                  "params": [
+                    "debuttantque"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 6,
+                  "params": [
+                    "n % diviseur == 0"
+                  ],
+                  "children": [
+                    {
+                      "type": 7,
+                      "params": [
+                        "debutsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 205,
+                      "params": [
+                        "FAUX"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 8,
+                      "params": [
+                        "finsi"
+                      ],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "diviseur",
+                    "diviseur + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 17,
+                  "params": [
+                    "fintantque"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "VRAI"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "entier"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 12,
+          "params": [
+            "entier",
+            "1",
+            "100",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "est_premier(entier)"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "entier",
+                    "0"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\" \"",
+                    "0"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"\"",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

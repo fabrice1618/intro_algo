@@ -1,0 +1,682 @@
+{
+  "format": 3,
+  "titre": "09_extremes",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "LISTE",
+            "tableau"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "taille_tableau"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nombre_minimum"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nombre_maximum"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "i"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "j"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "indice_min"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "temporaire"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "compte"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "somme"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Nombre d'éléments : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "taille_tableau",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "taille_tableau",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "i",
+            "0",
+            "taille_tableau - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "tableau",
+                "randint(1, 100)",
+                "i"
+              ],
+              "children": []
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Nombres aléatoires : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "tableau",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Nombre de valeurs minimum à afficher : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "nombre_minimum",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "nombre_minimum",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Nombre de valeurs maximum à afficher : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "nombre_maximum",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "nombre_maximum",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 19,
+          "params": [
+            "tri par sélection (chapitre 09)"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "i",
+            "0",
+            "taille_tableau - 2",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "indice_min",
+                "i",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 12,
+              "params": [
+                "j",
+                "i + 1",
+                "taille_tableau - 1",
+                "1"
+              ],
+              "children": [
+                {
+                  "type": 13,
+                  "params": [
+                    "debutpour"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 6,
+                  "params": [
+                    "tableau[j] < tableau[indice_min]"
+                  ],
+                  "children": [
+                    {
+                      "type": 7,
+                      "params": [
+                        "debutsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 5,
+                      "params": [
+                        "indice_min",
+                        "j",
+                        "pasliste"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 8,
+                      "params": [
+                        "finsi"
+                      ],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": 14,
+                  "params": [
+                    "finpour"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 5,
+              "params": [
+                "temporaire",
+                "tableau[i]",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "tableau",
+                "tableau[indice_min]",
+                "i"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "tableau",
+                "temporaire",
+                "indice_min"
+              ],
+              "children": []
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 19,
+          "params": [
+            "plus petites valeurs : début du tableau trié, sans répéter une valeur"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Plus petites valeurs : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "compte",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "i",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 15,
+          "params": [
+            "compte < nombre_minimum ET i < taille_tableau"
+          ],
+          "children": [
+            {
+              "type": 16,
+              "params": [
+                "debuttantque"
+              ],
+              "children": []
+            },
+            {
+              "type": 19,
+              "params": [
+                "si i vaut 0, OU ne regarde pas tableau[i - 1] (court-circuit)"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "i == 0 OU tableau[i] != tableau[i - 1]"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "tableau[i]",
+                    "0"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\" \"",
+                    "0"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "compte",
+                    "compte + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 5,
+              "params": [
+                "i",
+                "i + 1",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 17,
+              "params": [
+                "fintantque"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"\"",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 19,
+          "params": [
+            "plus grandes valeurs : fin du tableau trié, parcourue à l'envers"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Plus grandes valeurs : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "compte",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "i",
+            "taille_tableau - 1",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 15,
+          "params": [
+            "compte < nombre_maximum ET i >= 0"
+          ],
+          "children": [
+            {
+              "type": 16,
+              "params": [
+                "debuttantque"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "i == taille_tableau - 1 OU tableau[i] != tableau[i + 1]"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "tableau[i]",
+                    "0"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\" \"",
+                    "0"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "compte",
+                    "compte + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 5,
+              "params": [
+                "i",
+                "i - 1",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 17,
+              "params": [
+                "fintantque"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"\"",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "somme",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "i",
+            "0",
+            "taille_tableau - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "somme",
+                "somme + tableau[i]",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Moyenne : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "somme / taille_tableau",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "format": 3,
+  "titre": "11_occurrences",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "phrase"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "LISTE",
+            "compteurs"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "rang"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "i"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "resultat"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Mot : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "phrase",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "phrase",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 19,
+          "params": [
+            "compteurs[0] pour \"a\", compteurs[1] pour \"b\"... compteurs[25] pour \"z\""
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "i",
+            "0",
+            "25",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "compteurs",
+                "0",
+                "i"
+              ],
+              "children": []
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 12,
+          "params": [
+            "i",
+            "0",
+            "length(phrase) - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "rang",
+                "asc(charat(phrase, i)) - asc(\"a\")",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "rang >= 0 ET rang <= 25"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "compteurs",
+                    "compteurs[rang] + 1",
+                    "rang"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 5,
+          "params": [
+            "resultat",
+            "\"\"",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "i",
+            "0",
+            "25",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "compteurs[i] > 0"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "resultat",
+                    "resultat + tostring(compteurs[i]) + char(asc(\"a\") + i)",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "resultat",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

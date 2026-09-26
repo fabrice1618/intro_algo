@@ -1,0 +1,665 @@
+{
+  "format": 3,
+  "titre": "10_interclassement",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": [
+        {
+          "type": 201,
+          "params": [
+            "tableau_aleatoire",
+            "taille:NOMBRE",
+            "LISTE"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": [
+                {
+                  "type": 1,
+                  "params": [
+                    "LISTE",
+                    "t"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "i"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 12,
+              "params": [
+                "i",
+                "0",
+                "taille - 1",
+                "1"
+              ],
+              "children": [
+                {
+                  "type": 13,
+                  "params": [
+                    "debutpour"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "t",
+                    "randint(0, 100)",
+                    "i"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 14,
+                  "params": [
+                    "finpour"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "t"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 201,
+          "params": [
+            "trier",
+            "t:LISTE",
+            "LISTE"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": [
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "i"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "j"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "indice_min"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "temporaire"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 12,
+              "params": [
+                "i",
+                "0",
+                "length(t) - 2",
+                "1"
+              ],
+              "children": [
+                {
+                  "type": 13,
+                  "params": [
+                    "debutpour"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "indice_min",
+                    "i",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 12,
+                  "params": [
+                    "j",
+                    "i + 1",
+                    "length(t) - 1",
+                    "1"
+                  ],
+                  "children": [
+                    {
+                      "type": 13,
+                      "params": [
+                        "debutpour"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 6,
+                      "params": [
+                        "t[j] < t[indice_min]"
+                      ],
+                      "children": [
+                        {
+                          "type": 7,
+                          "params": [
+                            "debutsi"
+                          ],
+                          "children": []
+                        },
+                        {
+                          "type": 5,
+                          "params": [
+                            "indice_min",
+                            "j",
+                            "pasliste"
+                          ],
+                          "children": []
+                        },
+                        {
+                          "type": 8,
+                          "params": [
+                            "finsi"
+                          ],
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": 14,
+                      "params": [
+                        "finpour"
+                      ],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "temporaire",
+                    "t[i]",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "t",
+                    "t[indice_min]",
+                    "i"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "t",
+                    "temporaire",
+                    "indice_min"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 14,
+                  "params": [
+                    "finpour"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "t"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 201,
+          "params": [
+            "interclasser",
+            "a:LISTE,b:LISTE",
+            "LISTE"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": [
+                {
+                  "type": 1,
+                  "params": [
+                    "LISTE",
+                    "resultat"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "i"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "j"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "i",
+                "0",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "j",
+                "0",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 19,
+              "params": [
+                "i éléments pris dans a et j dans b : le suivant va à l'indice i + j"
+              ],
+              "children": []
+            },
+            {
+              "type": 15,
+              "params": [
+                "i < length(a) ET j < length(b)"
+              ],
+              "children": [
+                {
+                  "type": 16,
+                  "params": [
+                    "debuttantque"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 6,
+                  "params": [
+                    "a[i] <= b[j]"
+                  ],
+                  "children": [
+                    {
+                      "type": 7,
+                      "params": [
+                        "debutsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 5,
+                      "params": [
+                        "resultat",
+                        "a[i]",
+                        "i + j"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 5,
+                      "params": [
+                        "i",
+                        "i + 1",
+                        "pasliste"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 8,
+                      "params": [
+                        "finsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 9,
+                      "params": [
+                        "sinon"
+                      ],
+                      "children": [
+                        {
+                          "type": 10,
+                          "params": [
+                            "debutsinon"
+                          ],
+                          "children": []
+                        },
+                        {
+                          "type": 5,
+                          "params": [
+                            "resultat",
+                            "b[j]",
+                            "i + j"
+                          ],
+                          "children": []
+                        },
+                        {
+                          "type": 5,
+                          "params": [
+                            "j",
+                            "j + 1",
+                            "pasliste"
+                          ],
+                          "children": []
+                        },
+                        {
+                          "type": 11,
+                          "params": [
+                            "finsinon"
+                          ],
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": 17,
+                  "params": [
+                    "fintantque"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 19,
+              "params": [
+                "un des deux tableaux est épuisé : recopier la fin de l'autre"
+              ],
+              "children": []
+            },
+            {
+              "type": 15,
+              "params": [
+                "i < length(a)"
+              ],
+              "children": [
+                {
+                  "type": 16,
+                  "params": [
+                    "debuttantque"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "resultat",
+                    "a[i]",
+                    "i + j"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "i",
+                    "i + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 17,
+                  "params": [
+                    "fintantque"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 15,
+              "params": [
+                "j < length(b)"
+              ],
+              "children": [
+                {
+                  "type": 16,
+                  "params": [
+                    "debuttantque"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "resultat",
+                    "b[j]",
+                    "i + j"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "j",
+                    "j + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 17,
+                  "params": [
+                    "fintantque"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "resultat"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "LISTE",
+            "tableau1"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "LISTE",
+            "tableau2"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 5,
+          "params": [
+            "tableau1",
+            "trier(tableau_aleatoire(10))",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "tableau2",
+            "trier(tableau_aleatoire(10))",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "tableau1",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "tableau2",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "interclasser(tableau1, tableau2)",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

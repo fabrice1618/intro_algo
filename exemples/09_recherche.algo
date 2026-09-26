@@ -1,0 +1,201 @@
+{
+  "format": 3,
+  "titre": "09_recherche",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "LISTE",
+            "tableau"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "cherche"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "i"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 5,
+          "params": [
+            "tableau",
+            "[12, 7, 25, 3, 18]",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "cherche",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "i",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 15,
+          "params": [
+            "i < length(tableau) ET tableau[i] != cherche"
+          ],
+          "children": [
+            {
+              "type": 16,
+              "params": [
+                "debuttantque"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "i",
+                "i + 1",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 17,
+              "params": [
+                "fintantque"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 6,
+          "params": [
+            "i < length(tableau)"
+          ],
+          "children": [
+            {
+              "type": 7,
+              "params": [
+                "debutsi"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\"Trouvé à l'indice \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "i",
+                "1"
+              ],
+              "children": []
+            },
+            {
+              "type": 8,
+              "params": [
+                "finsi"
+              ],
+              "children": []
+            },
+            {
+              "type": 9,
+              "params": [
+                "sinon"
+              ],
+              "children": [
+                {
+                  "type": 10,
+                  "params": [
+                    "debutsinon"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\"Absent\"",
+                    "1"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 11,
+                  "params": [
+                    "finsinon"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

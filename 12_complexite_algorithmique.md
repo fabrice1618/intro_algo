@@ -36,6 +36,16 @@ Règles de simplification :
 
 Exemple : une complexité de `3n^2 + 5n + 2` se simplifie en `O(n^2)`.
 
+Règles pratiques pour compter les opérations :
+
+| Structure | Coût |
+|-----------|------|
+| Instruction simple (affectation, calcul, comparaison) | 1 : `O(1)` |
+| Instructions en séquence | on **additionne** : on garde la plus coûteuse |
+| `SI ... SINON` | le coût de la branche la plus chère |
+| Boucle de `n` tours | `n` × le coût du corps |
+| Boucles imbriquées | on **multiplie** les nombres de tours : 2 boucles de `n` tours donnent `O(n^2)` |
+
 ---
 
 ## 4. Principaux types de complexité
@@ -77,11 +87,11 @@ Le temps d'exécution augmente proportionnellement à `n`.
 **Exemples :**
 
 - Parcourir un tableau
-- Rechercher une valeur dans un tableau non trié
+- Rechercher une valeur dans un tableau non trié (chapitre 09)
 - Calculer la somme des éléments d'un tableau
 
 ```
-Pour i de 1 à n
+Pour i de 0 à n - 1
    Afficher T[i]
 Fin Pour
 ```
@@ -104,17 +114,19 @@ Deux boucles imbriquées parcourent les données.
 
 **Exemples :**
 
-- Tri par sélection
+- Tri par sélection (chapitre 09)
 - Tri à bulles
 - Comparer toutes les paires d'éléments
 
 ```
-Pour i de 1 à n
-   Pour j de 1 à n
+Pour i de 0 à n - 1
+   Pour j de 0 à n - 1
       Comparer T[i] et T[j]
    Fin Pour
 Fin Pour
 ```
+
+Trois boucles imbriquées donnent `O(n^3)` (complexité cubique) : c'est le cas de la recherche des triangles de Pythagore (exercice du chapitre 08).
 
 ### 4.6. Tableau récapitulatif
 
@@ -124,7 +136,18 @@ Fin Pour
 | O(log n)     | Logarithmique    | Recherche dichotomique        |
 | O(n)         | Linéaire         | Parcours de tableau           |
 | O(n log n)   | Quasi-linéaire   | Tri fusion                    |
-| O(n^2)       | Quadratique      | Tri à bulles                  |
+| O(n^2)       | Quadratique      | Tri par sélection, tri à bulles |
+| O(n^3)       | Cubique          | Trois boucles imbriquées      |
+
+Nombre d'opérations selon la taille des données (log en base 2, arrondi) :
+
+| n | O(log n) | O(n) | O(n log n) | O(n^2) |
+|---|----------|------|------------|--------|
+| 10 | 3 | 10 | 33 | 100 |
+| 1 000 | 10 | 1 000 | 10 000 | 1 000 000 |
+| 1 000 000 | 20 | 1 000 000 | 20 000 000 | 1 000 000 000 000 |
+
+À un milliard d'opérations par seconde, un tri en `O(n log n)` de 1 million de valeurs prend 0,02 s ; un tri en `O(n^2)`, environ 17 minutes.
 
 ---
 
@@ -139,6 +162,8 @@ L'analyse d'un algorithme distingue trois scénarios :
 | Cas moyen    | Comportement moyen sur un ensemble d'entrées         |
 
 En pratique, on étudie principalement le **pire cas**, car il garantit une borne supérieure sur le temps d'exécution.
+
+Exemple, la recherche d'une valeur dans un tableau de `n` éléments (chapitre 09) : 1 comparaison dans le meilleur cas (valeur en première position), `n` comparaisons dans le pire cas (valeur absente). Sa complexité est donc `O(n)`.
 
 ---
 
@@ -155,21 +180,24 @@ Un algorithme qui crée des structures temporaires proportionnelles à `n` a une
 
 ---
 
-## 7. Synthèse
+## 7. Mesurer avec AlgoFab
 
-La maîtrise de la complexité algorithmique permet de :
-
-- choisir l'algorithme le plus adapté à un problème donné
-- anticiper les problèmes de performance sur de grands volumes de données
-- comprendre les choix d'implémentation dans les bases de données et les réseaux
-- justifier un choix technique dans un contexte professionnel
+- **Vérifier** affiche un bloc **Complexité** pour le programme principal et chaque fonction : une estimation du **temps** d'après les `POUR` imbriqués (« indéterminée » avec un `TANT_QUE` ou une récursion), la complexité **cyclomatique** (chapitre 13) et l'**espace**.
+- Après une exécution, le volet **Exécution** compte les **instructions** et les **tours de boucle** réellement effectués. En relançant avec une taille `n` doublée, on observe l'ordre de grandeur : le nombre de tours double pour `O(n)`, il est multiplié par 4 pour `O(n^2)`.
 
 ---
 
 ## 8. A retenir
 
 - La complexité d'un algorithme s'exprime en fonction de la taille des données `n`.
-- La notation **grand O** permet de comparer les algorithmes entre eux.
+- La notation **grand O** permet de comparer les algorithmes entre eux, indépendamment de la machine.
 - `O(1) < O(log n) < O(n) < O(n log n) < O(n^2)` (du plus efficace au moins efficace).
-- Les algorithmes de tri sont un cas d'étude classique pour illustrer ces différences.
+- Des boucles imbriquées **multiplient** les coûts, des boucles successives les **additionnent**.
+- On étudie surtout le **pire cas**.
 - On raisonne sur des **ordres de grandeur**, pas sur des temps d'exécution absolus.
+
+---
+
+## Exercices
+
+Fiche [exercices/12_complexite_algorithmique.md](exercices/12_complexite_algorithmique.md) : calculer la complexité d'algorithmes du cours, améliorer la recherche des triangles de Pythagore, mesurer avec AlgoFab.

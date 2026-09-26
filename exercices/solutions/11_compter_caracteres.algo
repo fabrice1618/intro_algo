@@ -1,0 +1,172 @@
+{
+  "format": 3,
+  "titre": "11_compter_caracteres",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "phrase"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nombre_caracteres"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "index"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 2,
+          "params": [
+            "phrase",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "nombre_caracteres",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "index",
+            "0",
+            "length(phrase) - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 19,
+              "params": [
+                "Si le caractère à la position index n'est pas un espace, le comptabiliser"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "charat(phrase, index) != \" \""
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "nombre_caracteres",
+                    "nombre_caracteres + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Nombre de caractères : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "nombre_caracteres",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

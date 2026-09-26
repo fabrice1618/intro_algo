@@ -1,7 +1,4 @@
-
-## Complexité **cyclomatique**
-
----
+# Complexité cyclomatique
 
 ## 1. Définition
 
@@ -22,7 +19,7 @@ Elle sert à :
 - repérer un code **trop compliqué** à maintenir
 - guider les décisions de **refactorisation** (simplification du code)
 
-**Ce n'est pas une complexité de temps** (contrairement à \( O(n) \)).
+**Ce n'est pas une complexité de temps** (contrairement à `O(n)`, chapitre 12).
 Elle ne dit rien sur la vitesse d'exécution, mais sur la **structure logique**.
 
 ---
@@ -42,6 +39,8 @@ Une **décision** est toute instruction qui crée une **bifurcation** :
 - chaque opérateur logique `ET` / `OU` dans une condition composée
 
 **Attention** : `sinon` seul ne compte pas comme une décision (c'est le chemin par défaut).
+
+Dans AlgoFab, les décisions sont `SI`, `POUR`, `TANT_QUE`, `FAIRE ... TANT_QUE` et chaque `ET` / `OU` de leurs conditions ; un « sinon si » s'écrit avec un `SI` dans le `SINON` et compte donc comme un `SI`. **Vérifier** affiche la complexité cyclomatique du programme principal et de chaque fonction.
 
 ---
 
@@ -158,18 +157,18 @@ Fin Si
 Afficher "Fin"            <- Noeud 5
 ```
 
-Le graphe correspondant :
+Le graphe correspondant : chaque instruction est un **nœud**, chaque passage possible de l'une à l'autre est un **arc**.
 
+```mermaid
+flowchart TD
+    n1["1 : Lire x"] --> n2{"2 : x > 0 ?"}
+    n2 -- oui --> n3["3 : Afficher Positif"]
+    n2 -- non --> n4["4 : Afficher Négatif"]
+    n3 --> n5["5 : Afficher Fin"]
+    n4 --> n5
 ```
-    [1] Lire x
-       |
-    [2] Si x > 0 ?
-      /        \
-   [3]          [4]
-  Positif    Négatif
-      \        /
-    [5] Fin
-```
+
+Sur le graphe, V(G) = arcs − nœuds + 2 = 5 − 5 + 2 = **2** : deux chemins, 1-2-3-5 et 1-2-4-5.
 
 En pratique, la méthode **1 + nombre de décisions** donne le bon résultat rapidement :
 1 + 1 décision = **2**
@@ -253,98 +252,14 @@ C'est pourquoi on veut la garder basse : moins de chemins = **moins de tests à 
 | | Complexité algorithmique | Complexité cyclomatique |
 |---|-------------------------|-------------------------|
 | **Mesure** | Temps / mémoire d'exécution | Nombre de chemins logiques |
-| **Dépend de** | La taille des données \( n \) | Le nombre de décisions |
-| **Notation** | \( O(n) \), \( O(n^2) \)… | Un entier (1, 2, 3…) |
+| **Dépend de** | La taille des données `n` | Le nombre de décisions |
+| **Notation** | `O(n)`, `O(n^2)`… | Un entier (1, 2, 3…) |
 | **Objectif** | Évaluer la **performance** | Évaluer la **maintenabilité** |
-| **Exemple** | Tri à bulles : \( O(n^2) \) | Tri à bulles : V(G) = 3 |
+| **Exemple** | Tri par sélection : `O(n^2)` | Tri par sélection : V(G) = 4 |
 
 ---
 
-## 9. Exercices
-
-### Exercice 1
-Calculer la complexité cyclomatique de l'algorithme suivant :
-```text
-Lire n
-Si n > 0 alors
-   Pour i de 1 à n
-      Afficher i
-   Fin Pour
-Sinon
-   Afficher "Nombre négatif"
-Fin Si
-```
-
-<details>
-<summary>Solution</summary>
-
-Décisions : `si` (1) + `pour` (1) = 2
-**V(G) = 1 + 2 = 3**
-</details>
-
----
-
-### Exercice 2
-Calculer la complexité cyclomatique :
-```text
-Lire note
-Si note ≥ 16 alors
-   Afficher "Très bien"
-Sinon Si note ≥ 14 alors
-   Afficher "Bien"
-Sinon Si note ≥ 12 alors
-   Afficher "Assez bien"
-Sinon Si note ≥ 10 alors
-   Afficher "Passable"
-Sinon
-   Afficher "Insuffisant"
-Fin Si
-```
-
-<details>
-<summary>Solution</summary>
-
-Décisions : 4 (`si`, `sinon si`, `sinon si`, `sinon si`)
-**V(G) = 1 + 4 = 5**
-
-5 chemins possibles, donc il faudra au minimum **5 cas de test**.
-</details>
-
----
-
-### Exercice 3
-Calculer la complexité cyclomatique :
-```text
-Lire age
-Lire permis
-Si (age ≥ 18) ET (permis = vrai) alors
-   Lire vitesse
-   Si vitesse > 130 alors
-      Afficher "Excès de vitesse"
-   Sinon
-      Afficher "Vitesse OK"
-   Fin Si
-Sinon
-   Afficher "Non autorisé"
-Fin Si
-```
-
-<details>
-<summary>Solution</summary>
-
-Décisions : `si` avec `ET` (2) + `si vitesse` (1) = 3
-**V(G) = 1 + 3 = 4**
-
-4 chemins possibles :
-1. age < 18 ou pas de permis : "Non autorisé"
-2. age < 18 et permis (court-circuit sur age) : "Non autorisé"
-3. Autorisé + vitesse > 130 : "Excès de vitesse"
-4. Autorisé + vitesse ≤ 130 : "Vitesse OK"
-</details>
-
----
-
-## 10. À retenir
+## 9. À retenir
 
 - La complexité cyclomatique mesure le **nombre de chemins d'exécution indépendants**
 - Formule simplifiée : **V(G) = 1 + nombre de décisions**
@@ -352,3 +267,9 @@ Décisions : `si` avec `ET` (2) + `si vitesse` (1) = 3
 - Elle détermine le **nombre minimum de tests** pour couvrir tout le code
 - Un algorithme trop complexe (> 10) doit être **simplifié** (découpage en fonctions)
 - Objectif : **rester en dessous de 5**
+
+---
+
+## Exercices
+
+Fiche [exercices/13_complexite_cyclomatique.md](exercices/13_complexite_cyclomatique.md) : calculer V(G), lister les chemins et les cas de test, simplifier une solution trop complexe.

@@ -1,0 +1,312 @@
+{
+  "format": 3,
+  "titre": "10_pgcd",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": [
+        {
+          "type": 201,
+          "params": [
+            "pgcd",
+            "a:NOMBRE,b:NOMBRE",
+            "NOMBRE"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": [
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "reste"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 15,
+              "params": [
+                "b != 0"
+              ],
+              "children": [
+                {
+                  "type": 16,
+                  "params": [
+                    "debuttantque"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "reste",
+                    "a % b",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "a",
+                    "b",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "b",
+                    "reste",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 17,
+                  "params": [
+                    "fintantque"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "a"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 201,
+          "params": [
+            "pgcd_recursif",
+            "a:NOMBRE,b:NOMBRE",
+            "NOMBRE"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "b == 0"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 205,
+                  "params": [
+                    "a"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "pgcd_recursif(b, a % b)"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "x"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "y"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Premier nombre : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "x",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "x",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Second nombre : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "y",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "y",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"PGCD (itératif) : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "pgcd(x, y)",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"PGCD (récursif) : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "pgcd_recursif(x, y)",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

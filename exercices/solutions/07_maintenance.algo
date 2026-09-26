@@ -1,0 +1,267 @@
+{
+  "format": 3,
+  "titre": "07_maintenance",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "BOOLEEN",
+            "condition1"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "BOOLEEN",
+            "condition2"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "BOOLEEN",
+            "condition3"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "jours_depuis_maintenance"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "heures_utilisation"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "production"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Indiquez les informations de fonctionnement\"",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Nombre de jours depuis la dernière maintenance : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "jours_depuis_maintenance",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "jours_depuis_maintenance",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "condition1",
+            "jours_depuis_maintenance > 35",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Nombre d'heures d'utilisation : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "heures_utilisation",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "heures_utilisation",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "condition2",
+            "heures_utilisation > 3000",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Production depuis la dernière maintenance : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "production",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "production",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "condition3",
+            "production < 2000 OU production > 10000",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 6,
+          "params": [
+            "condition1 OU condition2 OU condition3"
+          ],
+          "children": [
+            {
+              "type": 7,
+              "params": [
+                "debutsi"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\"Maintenance impérative\"",
+                "1"
+              ],
+              "children": []
+            },
+            {
+              "type": 8,
+              "params": [
+                "finsi"
+              ],
+              "children": []
+            },
+            {
+              "type": 9,
+              "params": [
+                "sinon"
+              ],
+              "children": [
+                {
+                  "type": 10,
+                  "params": [
+                    "debutsinon"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\"Maintenance reportée\"",
+                    "1"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 11,
+                  "params": [
+                    "finsinon"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

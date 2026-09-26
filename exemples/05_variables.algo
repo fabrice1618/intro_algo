@@ -72,14 +72,6 @@
             "en_stock"
           ],
           "children": []
-        },
-        {
-          "type": 1,
-          "params": [
-            "LISTE",
-            "tailles"
-          ],
-          "children": []
         }
       ]
     },
@@ -126,24 +118,6 @@
           "children": []
         },
         {
-          "type": 5,
-          "params": [
-            "tailles",
-            "[10, 12, 16]",
-            "pasliste"
-          ],
-          "children": []
-        },
-        {
-          "type": 5,
-          "params": [
-            "tailles",
-            "20",
-            "3"
-          ],
-          "children": []
-        },
-        {
           "type": 20,
           "params": [
             "nom_piece",
@@ -171,14 +145,6 @@
           "type": 20,
           "params": [
             "en_stock",
-            "1"
-          ],
-          "children": []
-        },
-        {
-          "type": 20,
-          "params": [
-            "tailles",
             "1"
           ],
           "children": []

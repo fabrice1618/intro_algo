@@ -1,0 +1,438 @@
+{
+  "format": 3,
+  "titre": "11_lettres",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": [
+        {
+          "type": 201,
+          "params": [
+            "est_voyelle",
+            "caractere:CHAINE",
+            "BOOLEEN"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": [
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "i"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 12,
+              "params": [
+                "i",
+                "0",
+                "length(VOYELLES) - 1",
+                "1"
+              ],
+              "children": [
+                {
+                  "type": 13,
+                  "params": [
+                    "debutpour"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 6,
+                  "params": [
+                    "charat(VOYELLES, i) == caractere"
+                  ],
+                  "children": [
+                    {
+                      "type": 7,
+                      "params": [
+                        "debutsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 205,
+                      "params": [
+                        "VRAI"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 8,
+                      "params": [
+                        "finsi"
+                      ],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": 14,
+                  "params": [
+                    "finpour"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "FAUX"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": [
+        {
+          "type": 26,
+          "params": [
+            "CHAINE",
+            "VOYELLES",
+            "\"AEIOUYaeiouy\""
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "phrase"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "caractere"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "i"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_majuscules"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_minuscules"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_voyelles"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Phrase : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "phrase",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "phrase",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "nb_majuscules",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "nb_minuscules",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "nb_voyelles",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "i",
+            "0",
+            "length(phrase) - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "caractere",
+                "charat(phrase, i)",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "caractere >= \"A\" ET caractere <= \"Z\""
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "nb_majuscules",
+                    "nb_majuscules + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 6,
+              "params": [
+                "caractere >= \"a\" ET caractere <= \"z\""
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "nb_minuscules",
+                    "nb_minuscules + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 6,
+              "params": [
+                "est_voyelle(caractere)"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "nb_voyelles",
+                    "nb_voyelles + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Majuscules : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "nb_majuscules",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Minuscules : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "nb_minuscules",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Voyelles : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "nb_voyelles",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

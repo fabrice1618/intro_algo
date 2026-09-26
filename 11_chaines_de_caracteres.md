@@ -1,131 +1,36 @@
 # Chaînes de caractères
 
-## 1 - Opérations avec les chaînes
+## 1. Une chaîne, une suite de caractères
 
-### Concaténation
+Comme les éléments d'un tableau, les caractères d'une chaîne sont numérotés **à partir de 0** :
 
-Il est possible de concaténer des chaînes avec l'opérateur `+` (ou la fonction `concat(a, b, ...)`).
+| Position | 0 | 1 | 2 | 3 | 4 |
+|----------|---|---|---|---|---|
+| `"Algo!"` | `A` | `l` | `g` | `o` | `!` |
 
-Exemple :
+`length("Algo!")` vaut 5 : le dernier caractère est à la position `length(chaine) - 1`.
 
-```
-VARIABLES
-  resultat EST_DU_TYPE CHAINE
-DEBUT_ALGORITHME
-  resultat PREND_LA_VALEUR "Bonjour, "
-  resultat PREND_LA_VALEUR resultat + "tout le monde !"
-  AFFICHER resultat ↵
-FIN_ALGORITHME
-```
+---
 
-Affichage :
+## 2. Fonctions sur les chaînes
 
-```
-Bonjour, tout le monde !
-```
-
-Fichier : [exemples/11_concatenation.algo](exemples/11_concatenation.algo)
-
-> Attention : `+` entre une chaîne et un nombre fait une concaténation (`"a" + 1` donne `"a1"`). Pour additionner des nombres saisis sous forme de texte, il faut d'abord les convertir avec `int()` ou `float()`.
-
-### substr
-
-Il est possible d'extraire une portion d'une chaîne avec la fonction :
-
-```
-substr(chaine, position_premier_caractère_à_extraire, nombre_de_caractères_à_extraire)
-```
-
-Si le nombre de caractères est omis (`substr(chaine, debut)`), l'extraction va jusqu'à la fin de la chaîne.
+| Fonction | Rôle | Exemple | Résultat | Fichier |
+|----------|------|---------|----------|---------|
+| `+`, `concat(a, b, ...)` | concaténer : coller des textes bout à bout | `"Bonjour, " + "tout le monde !"` | `"Bonjour, tout le monde !"` | [11_concatenation](exemples/11_concatenation.algo) |
+| `length(chaine)` | nombre de caractères | `length("Algorithmie")` | `11` | [11_length](exemples/11_length.algo) |
+| `substr(chaine, debut, n)` | extraire `n` caractères à partir de la position `debut` (jusqu'à la fin si `n` est omis) | `substr("Programmation", 3, 4)` | `"gram"` | [11_substr](exemples/11_substr.algo) |
+| `charat(chaine, pos)` | caractère à la position `pos` (chaîne vide si `pos` est hors limites) | `charat("ABCD", 1)` | `"B"` | |
+| `asc(caractere)` | code ASCII du (premier) caractère | `asc("A")` | `65` | [11_asc](exemples/11_asc.algo) |
+| `char(code)` | caractère dont le code ASCII est `code` | `char(65)` | `"A"` | [11_char](exemples/11_char.algo) |
+| `tostring(nombre)` | nombre → chaîne (chapitre [06](06_lecture_ecriture.md)) | `tostring(1.618)` | `"1.618"` | [11_tostring](exemples/11_tostring.algo) |
 
 Attention : le premier caractère a pour position 0.
 
-Exemple :
+---
 
-```
-VARIABLES
-  a EST_DU_TYPE CHAINE
-  b EST_DU_TYPE CHAINE
-DEBUT_ALGORITHME
-  a PREND_LA_VALEUR "Programmation"
-  b PREND_LA_VALEUR substr(a, 3, 4)
-  AFFICHER b ↵
-FIN_ALGORITHME
-```
+## 3. Parcourir une chaîne
 
-Affichage :
-
-```
-gram
-```
-
-Fichier : [exemples/11_substr.algo](exemples/11_substr.algo)
-
-### tostring
-
-Un nombre peut être transformé en chaîne avec la fonction `tostring(nombre)`.
-
-Inversement, `int(chaine)` et `float(chaine)` transforment une chaîne en nombre : `int("153")` vaut `153`.
-
-Exemple :
-
-```
-VARIABLES
-  entier EST_DU_TYPE NOMBRE
-  phi EST_DU_TYPE NOMBRE
-  entier_chaine EST_DU_TYPE CHAINE
-  phi_chaine EST_DU_TYPE CHAINE
-DEBUT_ALGORITHME
-  entier PREND_LA_VALEUR 42
-  entier_chaine PREND_LA_VALEUR tostring(entier)
-  AFFICHER entier_chaine ↵
-  phi PREND_LA_VALEUR 1.618
-  phi_chaine PREND_LA_VALEUR tostring(phi)
-  AFFICHER phi_chaine ↵
-FIN_ALGORITHME
-```
-
-Affichage :
-
-```
-42
-1.618
-```
-
-Fichier : [exemples/11_tostring.algo](exemples/11_tostring.algo)
-
-### length
-
-La longueur d'une chaîne peut être obtenue avec la fonction `length(chaine)`.
-
-Exemple :
-
-```
-VARIABLES
-  machaine EST_DU_TYPE CHAINE
-  longueur EST_DU_TYPE NOMBRE
-DEBUT_ALGORITHME
-  machaine PREND_LA_VALEUR "Algorithmie"
-  longueur PREND_LA_VALEUR length(machaine)
-  AFFICHER longueur ↵
-FIN_ALGORITHME
-```
-
-Affichage :
-
-```
-11
-```
-
-Fichier : [exemples/11_length.algo](exemples/11_length.algo)
-
-### charat et asc
-
-La fonction `charat(machaine, pos)` renvoie le caractère situé à la position `pos` dans la chaîne `machaine` (une chaîne vide si `pos` est hors limites).
-
-La fonction `asc(caractere)` renvoie le code ASCII du (premier) caractère. Pour obtenir le code ASCII du caractère situé à la position `pos` : `asc(charat(machaine, pos))`.
-
-Attention : le premier caractère a pour position 0.
+On traite une chaîne caractère par caractère avec une boucle `POUR` de `0` à `length(chaine) - 1` et `charat`. Pour obtenir le code ASCII du caractère situé à la position `pos` : `asc(charat(machaine, pos))`.
 
 Exemple :
 
@@ -169,11 +74,11 @@ ABCD
 
 Fichier : [exemples/11_asc.algo](exemples/11_asc.algo)
 
-### char
+---
 
-Inversement, la fonction `char(nombre)` renvoie une chaîne contenant le caractère dont le code ASCII est égal à nombre.
+## 4. Construire une chaîne
 
-Exemple :
+Une chaîne se construit comme un total : on part de la chaîne vide `""` et on lui **concatène** un morceau à chaque tour. Ici, `char` fabrique les lettres à partir de leur code ASCII :
 
 ```
 VARIABLES
@@ -197,7 +102,25 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 Fichier : [exemples/11_char.algo](exemples/11_char.algo)
 
-### Exemple récapitulatif
+---
+
+## 5. Tester et transformer un caractère
+
+Les codes ASCII des lettres et des chiffres se suivent (table en fin de chapitre), ce qui permet :
+
+| Besoin | Expression |
+|--------|------------|
+| `c` est une majuscule | `c >= "A" ET c <= "Z"` |
+| `c` est une minuscule | `c >= "a" ET c <= "z"` |
+| `c` est un chiffre | `c >= "0" ET c <= "9"` |
+| minuscule de la majuscule `c` | `char(asc(c) + 32)` : `"a"` (97) = `"A"` (65) + 32 |
+| valeur du chiffre `c` | `asc(c) - asc("0")` : `"7"` donne `7` |
+
+Les lettres accentuées (`é`, `à`...) sont en dehors de ces plages.
+
+---
+
+## 6. Exemple récapitulatif
 
 Décomposer un nombre saisi en caractères, avec leur position et leur code ASCII.
 
@@ -235,7 +158,11 @@ Affichage pour la saisie `2026` :
 
 Fichier : [exemples/11_extract_chaine.algo](exemples/11_extract_chaine.algo)
 
-## 2 - Code ASCII
+---
+
+## 7. Code ASCII
+
+Code d'un caractère = en-tête de sa colonne + numéro de sa ligne : `A` vaut 60 + 5 = 65. L'espace a le code 32 (colonne 30, ligne 2).
 
 ```
   30 40 50 60 70 80 90 100 110 120
@@ -251,3 +178,9 @@ Fichier : [exemples/11_extract_chaine.algo](exemples/11_extract_chaine.algo)
 8: &  0  :  D  N  X  b  l   v
 9: '  1  ;  E  O  Y  c  m   w
 ```
+
+---
+
+## Exercices
+
+Fiche [exercices/11_chaines.md](exercices/11_chaines.md) : compter caractères, voyelles, majuscules et minuscules, formater une date, convertir un texte en nombre, en URL, compter les lettres, vérifier un mot de passe.

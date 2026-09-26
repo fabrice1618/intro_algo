@@ -2,27 +2,26 @@
 
 ## 1. Usage
 
-Les boucles permettent de **répéter une série d'instructions**. Il est possible d'**imbriquer** les boucles.
+Les boucles permettent de **répéter une série d'instructions** : saisir plusieurs valeurs, cumuler un total, parcourir des milliers de données. Chaque passage dans la boucle est un **tour** (une itération).
 
-### Exemples d'utilisation
-
-- Remplir un tableau
-- Parcourir des champs de formulaires
-- Itérer sur des milliers de lignes très rapidement
-- Trier des listes
-
----
-
-## 2. Deux types de boucles
+Deux types de boucles :
 
 - **Nombre d'itérations connu à l'avance**, géré par un compteur
   - ex : "Pour i=1 jusqu'à 3, enrouler film autour palette"
 - **La boucle s'arrête quand une condition est remplie**, gérée par un booléen
-  - ex : "Tant que le MDP <> MotDePasseSaisi, ressaisir"
+  - ex : "Tant que le mot de passe saisi est faux, ressaisir"
+
+```mermaid
+flowchart TD
+    q1{"Nombre de tours connu<br/>avant de commencer ?"} -- oui --> pour[POUR]
+    q1 -- non --> q2{"Faut-il faire au moins<br/>un tour ?"}
+    q2 -- oui --> faire[FAIRE ... TANT_QUE]
+    q2 -- non --> tantque[TANT_QUE]
+```
 
 ---
 
-## 3. POUR ... ALLANT_DE (boucle compteur)
+## 2. POUR ... ALLANT_DE (boucle compteur)
 
 ### Syntaxe
 
@@ -36,33 +35,41 @@ POUR index ALLANT_DE valeur_debut A valeur_fin
 - La variable compteur (`index`) doit être déclarée, de type `NOMBRE`.
 - Le compteur part de `valeur_debut` et avance de 1 à chaque tour, tant qu'il est inférieur ou égal à `valeur_fin`.
 
-### Exemple
+```mermaid
+flowchart TD
+    init["index ← valeur_debut"] --> test{"index <= valeur_fin ?"}
+    test -- oui --> corps[Instructions]
+    corps --> incr["index ← index + 1"]
+    incr --> test
+    test -- non --> suite[Suite de l'algorithme]
+```
+
+### Exemple : moyenne de la production de la semaine
 
 ```
 VARIABLES
   jour EST_DU_TYPE NOMBRE
-  production_jour EST_DU_TYPE LISTE
+  production EST_DU_TYPE NOMBRE
   total EST_DU_TYPE NOMBRE
-  moyenne EST_DU_TYPE NOMBRE
 DEBUT_ALGORITHME
-  POUR jour ALLANT_DE 0 A 6
-    DEBUT_POUR
-    AFFICHER "Jour "
-    AFFICHER jour + 1 ↵
-    LIRE production_jour[jour]
-    FIN_POUR
   total PREND_LA_VALEUR 0
-  POUR jour ALLANT_DE 0 A 6
+  POUR jour ALLANT_DE 1 A 7
     DEBUT_POUR
-    total PREND_LA_VALEUR total + production_jour[jour]
+    AFFICHER "Production du jour "
+    AFFICHER jour
+    AFFICHER " : "
+    LIRE production
+    AFFICHER production ↵
+    total PREND_LA_VALEUR total + production
     FIN_POUR
-  moyenne PREND_LA_VALEUR total / 7
   AFFICHER "Moyenne : "
-  AFFICHER moyenne ↵
+  AFFICHER total / 7 ↵
 FIN_ALGORITHME
 ```
 
 Fichier : [exemples/08_pour_production.algo](exemples/08_pour_production.algo)
+
+`total` est un **accumulateur** : initialisé **avant** la boucle (à `0` pour une somme, à `1` pour un produit), il cumule une valeur à chaque tour. La variable `production`, elle, est écrasée à chaque tour : impossible de revenir sur la production du lundi une fois la boucle finie. Pour conserver toutes les valeurs, il faudra un **tableau** (chapitre 09).
 
 ### Pas de la boucle : PAR_PAS_DE
 
@@ -93,7 +100,7 @@ Fichier : [exemples/08_pour_pas.algo](exemples/08_pour_pas.algo)
 
 ---
 
-## 4. TANT_QUE (boucle conditionnelle)
+## 3. TANT_QUE (boucle conditionnelle)
 
 ### Syntaxe
 
@@ -105,6 +112,13 @@ TANT_QUE (<expression booléenne>) FAIRE
 ```
 
 La condition est testée **avant** chaque tour : si elle est fausse dès le départ, les instructions ne sont jamais exécutées. Les instructions doivent faire évoluer la condition, sinon la boucle est infinie (AlgoFab l'arrête après 500 000 tours).
+
+```mermaid
+flowchart TD
+    test{"Condition vraie ?"} -- oui --> corps[Instructions]
+    corps --> test
+    test -- non --> suite[Suite de l'algorithme]
+```
 
 ### Exemple
 
@@ -136,7 +150,7 @@ Fichier : [exemples/08_tant_que_mot_de_passe.algo](exemples/08_tant_que_mot_de_p
 
 ---
 
-## 5. FAIRE ... TANT_QUE (au moins un tour)
+## 4. FAIRE ... TANT_QUE (au moins un tour)
 
 ### Syntaxe
 
@@ -148,6 +162,13 @@ FAIRE TANT_QUE (<expression booléenne>)
 ```
 
 Les instructions sont exécutées **une première fois**, puis la condition est testée : tant qu'elle est vraie, on recommence. La boucle tourne donc **au moins une fois**, ce qui convient bien à une saisie contrôlée.
+
+```mermaid
+flowchart TD
+    corps[Instructions] --> test{"Condition vraie ?"}
+    test -- oui --> corps
+    test -- non --> suite[Suite de l'algorithme]
+```
 
 ### Exemple
 
@@ -166,3 +187,48 @@ FIN_ALGORITHME
 ```
 
 Fichier : [exemples/08_faire_tant_que_saisie.algo](exemples/08_faire_tant_que_saisie.algo)
+
+---
+
+## 5. Boucles imbriquées
+
+Une boucle peut contenir une autre boucle : pour **chaque** tour de la boucle extérieure, la boucle intérieure fait **tous** ses tours.
+
+```
+CONSTANTES
+  N EST_DU_TYPE NOMBRE VALEUR 5
+VARIABLES
+  ligne EST_DU_TYPE NOMBRE
+  colonne EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  POUR ligne ALLANT_DE 1 A N
+    DEBUT_POUR
+    POUR colonne ALLANT_DE 1 A N
+      DEBUT_POUR
+      AFFICHER ligne * colonne
+      AFFICHER " "
+      FIN_POUR
+    AFFICHER "" ↵
+    FIN_POUR
+FIN_ALGORITHME
+```
+
+Affichage :
+
+```
+1 2 3 4 5
+2 4 6 8 10
+3 6 9 12 15
+4 8 12 16 20
+5 10 15 20 25
+```
+
+Fichier : [exemples/08_boucles_imbriquees.algo](exemples/08_boucles_imbriquees.algo)
+
+La ligne `AFFICHER ligne * colonne` est exécutée `N × N` fois, soit 25 fois : le coût des boucles imbriquées se **multiplie** (chapitre 12).
+
+---
+
+## Exercices
+
+Fiche [exercices/08_boucles.md](exercices/08_boucles.md) : factorielle, division et racine par soustractions, moyenne de la classe, jeu de dés, triangles de Pythagore, chemin de vie.

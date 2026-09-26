@@ -1,86 +1,18 @@
 # Les fonctions
 
-## 1. Description
+## 1. Pourquoi écrire des fonctions ?
 
-Une fonction est un **algorithme prédéfini** livré avec le langage (comme les calculettes).
+Les fonctions intégrées (`sqrt`, `round`, `randint`..., chapitre [06](06_lecture_ecriture.md)) sont des traitements prêts à l'emploi. On peut aussi écrire **ses propres fonctions**, pour :
 
-Exemples :
+- **découper** un problème en sous-problèmes (analyse descendante, chapitre [04](04_algorithme_methodologie.md)) : un sous-problème = une fonction
+- **réutiliser** un traitement sans le recopier
+- **tester** et corriger chaque partie séparément
 
-- Librairie mathématique (trigo, géo, finance) : sin, cos, loi.normale, etc.
-- Traitements de chaînes de caractères (extraction, recherche,...)
-
-Dans AlgoFab, on distingue :
-
-- les **fonctions intégrées**, livrées avec le langage (`sqrt`, `round`, `length`...) : sections 4 et 5
-- les **fonctions utilisateur**, écrites dans l'algorithme : section 6
+Elles se définissent dans la section `FONCTIONS_UTILISEES`.
 
 ---
 
-## 2. Utilisation
-
-- Pendant toute la programmation
-- En appel « extérieur » pour effectuer un traitement intermédiaire
-
----
-
-## 3. Syntaxe
-
-Une fonction se compose de :
-
-- un **nom**
-- 2 **parenthèses**
-- de 0 à N **arguments** séparés par virgule(s)
-
-```
-nom_fonction([argument1], [argument2], [argument3], ...)
-```
-
-Les parenthèses sont **obligatoires**, même sans argument : `random()`.
-
----
-
-## 4. Principales fonctions mathématiques
-
-| Fonction | Description | Syntaxe AlgoFab |
-|----------|-------------|-----------------|
-| racine carrée | Racine carrée de x | `sqrt(x)` |
-| puissance | x à la puissance y (aussi `x ^ y`) | `pow(x, y)` |
-| valeur absolue | Valeur absolue de x | `abs(x)` |
-| arrondi | Arrondi à l'entier, ou à n décimales | `round(x)`, `round(x, n)` |
-| partie entière | Troncature vers 0 | `int(x)` |
-| entier inférieur / supérieur | Plus grand entier ≤ x / plus petit entier ≥ x | `floor(x)`, `ceil(x)` |
-| maximum / minimum | Plus grand / plus petit des arguments | `max(a, b, ...)`, `min(a, b, ...)` |
-| aléatoire | Entier aléatoire entre p et n inclus | `randint(p, n)` |
-| aléatoire décimal | Nombre aléatoire dans [0 ; 1[ | `random()` |
-| trigonométrie | Angles en radians | `cos(x)`, `sin(x)`, `tan(x)` |
-
-La constante `PI` désigne π. Le reste de la division entière s'obtient avec l'opérateur `%` : `17 % 5` vaut `2`.
-
----
-
-## 5. Principales fonctions textes
-
-| Fonction | Description | Syntaxe AlgoFab |
-|----------|-------------|-----------------|
-| taille | Nombre de caractères (ou d'éléments d'une liste) | `length(chaine)` |
-| nombre en chaîne | Transformer un nombre en chaîne | `tostring(nombre)` |
-| chaîne en nombre | Transformer une chaîne en nombre | `int(chaine)`, `float(chaine)` |
-| extraire | Extraire une partie de la chaîne commençant au caractère de départ et longue de n caractères | `substr(chaine, debut, n)` |
-| caractère | Caractère à la position pos | `charat(chaine, pos)` |
-| code ASCII | Code ASCII du premier caractère de la chaîne | `asc(chaine)` |
-| caractère ASCII | Caractère correspondant au code ASCII | `char(code)` |
-| concaténation | Coller des textes bout à bout (aussi `+`) | `concat(a, b, ...)` |
-
-> Pour une documentation détaillée des fonctions de chaînes de caractères, voir le chapitre [11 - Chaînes de caractères](11_chaines_de_caracteres.md).
-> Liste complète : bouton **Aide** d'AlgoFab, page « Fonctions intégrées ».
-
----
-
-## 6. Fonctions utilisateur
-
-On peut aussi écrire **ses propres fonctions**, pour découper un problème en sous-problèmes (analyse descendante) et réutiliser un traitement. Elles se définissent dans la section `FONCTIONS_UTILISEES`.
-
-### Syntaxe
+## 2. Syntaxe
 
 ```
 FONCTION nom_fonction(parametre1: TYPE, parametre2: TYPE) → TYPE_RETOUR
@@ -92,14 +24,62 @@ FONCTION nom_fonction(parametre1: TYPE, parametre2: TYPE) → TYPE_RETOUR
   FIN_FONCTION
 ```
 
-- **Paramètres** : chacun a un nom et un type (`NOMBRE`, `CHAINE`, `BOOLEEN`, `LISTE`). Ils reçoivent, dans l'ordre, les valeurs passées à l'appel.
+- **Paramètres** : chacun a un nom et un type (`NOMBRE`, `CHAINE`, `BOOLEEN`, `LISTE`).
 - **Type de retour** : ce que la fonction renvoie. `AUCUN` pour une fonction qui ne renvoie rien (procédure). Si le type de retour est `NOMBRE`, AlgoFab ne l'affiche pas dans l'arbre.
 - **RENVOYER** termine la fonction et transmet le résultat à l'appelant.
-- **Portée** : une fonction ne voit que ses paramètres, ses variables locales et les constantes. Les variables du programme principal ne sont **pas** accessibles : on les passe en paramètre.
-- **Appel** : dans une expression (`x PREND_LA_VALEUR moyenne(12, 15)`), ou avec le bloc **APPELER** quand il n'y a pas de résultat à utiliser (l'arbre affiche alors simplement l'appel : `afficher_titre("Fonctions")`).
-- **Récursivité** : une fonction peut s'appeler elle-même (ici `factorielle`).
 
-### Exemple
+---
+
+## 3. Appel
+
+Une fonction s'appelle dans une expression (`x PREND_LA_VALEUR moyenne(12, 15)`), ou avec le bloc **APPELER** quand il n'y a pas de résultat à utiliser (l'arbre affiche alors simplement l'appel : `afficher_titre("Fonctions")`).
+
+À l'appel, les valeurs des **arguments** sont copiées dans les **paramètres**, dans l'ordre. La fonction s'exécute, puis `RENVOYER` transmet le résultat à l'appelant, qui reprend là où il s'était arrêté :
+
+```mermaid
+sequenceDiagram
+    participant P as Programme principal
+    participant M as moyenne(a, b)
+    P->>M: moyenne(12, 15) donc a ← 12 et b ← 15
+    M-->>P: RENVOYER (a + b) / 2, soit 13.5
+    Note over P: AFFICHER 13.5
+```
+
+---
+
+## 4. Portée des variables
+
+Une fonction ne voit que ses paramètres, ses variables locales et les constantes. Les variables du programme principal ne sont **pas** accessibles : on les passe en paramètre.
+
+| Élément | Visible dans le programme principal | Visible dans la fonction |
+|---------|-------------------------------------|--------------------------|
+| Variables de la section `VARIABLES` | oui | non |
+| Paramètres et variables de `VARIABLES_FONCTION` | non | oui |
+| Constantes | oui | oui |
+
+---
+
+## 5. Récursivité
+
+Une fonction peut s'appeler elle-même (ici `factorielle`, car n! = n × (n - 1)!). Il faut un **cas d'arrêt** (`n <= 1`) atteint à coup sûr, sinon les appels ne s'arrêtent jamais (AlgoFab stoppe au-delà de 5 000 appels imbriqués).
+
+```mermaid
+sequenceDiagram
+    participant P as Programme
+    participant F3 as factorielle(3)
+    participant F2 as factorielle(2)
+    participant F1 as factorielle(1)
+    P->>F3: factorielle(3)
+    F3->>F2: 3 * factorielle(2)
+    F2->>F1: 2 * factorielle(1)
+    F1-->>F2: RENVOYER 1 (cas d'arrêt)
+    F2-->>F3: RENVOYER 2 * 1 = 2
+    F3-->>P: RENVOYER 3 * 2 = 6
+```
+
+---
+
+## 6. Exemple
 
 ```
 FONCTIONS_UTILISEES
@@ -137,3 +117,9 @@ FIN_ALGORITHME
 ```
 
 Fichier : [exemples/10_fonctions_utilisateur.algo](exemples/10_fonctions_utilisateur.algo)
+
+---
+
+## Exercices
+
+Fiche [exercices/10_fonctions.md](exercices/10_fonctions.md) : maximum, nombres premiers, approximation de PI, PGCD, interclassement de tableaux.

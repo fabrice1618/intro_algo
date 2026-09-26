@@ -1,5 +1,7 @@
 # TP Algo
 
+> Évaluation. Notions : chapitres [05](../05_variables.md) à [11](../11_chaines_de_caracteres.md).
+
 Votre nom : 
 
 Peer review :
@@ -53,16 +55,16 @@ Ecrivez un algorithme qui demande une phrase à l’utilisateur et qui affiche �
 
 Exemple de résolution: (mais il y a plusieurs autres solutions...)
 
-On cosidère que l'on est dans un mot si le dernier caractère lu est alpha [a-z] ou [A-Z]
+On considère que l'on est dans un mot si le dernier caractère lu est alpha [a-z] ou [A-Z]
 
 ```mermaid
 flowchart TD
     start([Start]) --> A[lire caractère]
     A --> C{Alpha?}
-    C -- oui --> E{dans_un_mot==1?}
-    E -- non --> F[dans_un_mot==1, nb_mot++]
+    C -- oui --> E{"dans_un_mot == VRAI ?"}
+    E -- non --> F["dans_un_mot ← VRAI, nb_mots ← nb_mots + 1"]
     E -- oui --> fin_car
-    C -- non --> D[dans_un_mot==0]
+    C -- non --> D["dans_un_mot ← FAUX"]
     F --> fin_car[fin caractère]
     D --> fin_car
     fin_car --> A

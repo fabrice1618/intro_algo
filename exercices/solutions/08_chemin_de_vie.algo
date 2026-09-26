@@ -1,0 +1,299 @@
+{
+  "format": 3,
+  "titre": "08_chemin_de_vie",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "jour"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "mois"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "annee"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "n"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "somme"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Jour de naissance : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "jour",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "jour",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Mois de naissance : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "mois",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "mois",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Année de naissance : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "annee",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "annee",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 19,
+          "params": [
+            "jj, mm et aaaa collés en un seul nombre jjmmaaaa"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "n",
+            "jour * 1000000 + mois * 10000 + annee",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 15,
+          "params": [
+            "n > 9"
+          ],
+          "children": [
+            {
+              "type": 16,
+              "params": [
+                "debuttantque"
+              ],
+              "children": []
+            },
+            {
+              "type": 19,
+              "params": [
+                "somme des chiffres de n"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "somme",
+                "0",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 15,
+              "params": [
+                "n > 0"
+              ],
+              "children": [
+                {
+                  "type": 16,
+                  "params": [
+                    "debuttantque"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "somme",
+                    "somme + n % 10",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "n",
+                    "int(n / 10)",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 17,
+                  "params": [
+                    "fintantque"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 20,
+              "params": [
+                "\"Somme des chiffres : \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "somme",
+                "1"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "n",
+                "somme",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 17,
+              "params": [
+                "fintantque"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Chemin de vie : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "n",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

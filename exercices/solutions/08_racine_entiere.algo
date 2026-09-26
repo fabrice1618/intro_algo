@@ -1,0 +1,190 @@
+{
+  "format": 3,
+  "titre": "08_racine_entiere",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "n"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "racine"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "compteur"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Entrez un nombre : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "n",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "n",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "racine",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "compteur",
+            "1",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 19,
+          "params": [
+            "on soustrait les impairs successifs 1, 3, 5, 7..."
+          ],
+          "children": []
+        },
+        {
+          "type": 15,
+          "params": [
+            "n >= compteur"
+          ],
+          "children": [
+            {
+              "type": 16,
+              "params": [
+                "debuttantque"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "n",
+                "n - compteur",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "compteur",
+                "compteur + 2",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "racine",
+                "racine + 1",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 17,
+              "params": [
+                "fintantque"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"La racine carrée entière est : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "racine",
+            "1"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

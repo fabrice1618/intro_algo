@@ -1,0 +1,277 @@
+{
+  "format": 3,
+  "titre": "09_production_semaine",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": []
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": []
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "LISTE",
+            "production"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "jour"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "total"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "moyenne"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 19,
+          "params": [
+            "1er parcours : saisir et mémoriser les productions"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "total",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "jour",
+            "0",
+            "6",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\"Production du jour \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "jour + 1",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\" : \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 2,
+              "params": [
+                "production",
+                "jour"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "production[jour]",
+                "1"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "total",
+                "total + production[jour]",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 5,
+          "params": [
+            "moyenne",
+            "total / length(production)",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "\"Moyenne : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "moyenne",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 19,
+          "params": [
+            "2e parcours : relire les valeurs mémorisées"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "jour",
+            "0",
+            "length(production) - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "production[jour] > moyenne"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\"Jour \"",
+                    "0"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "jour + 1",
+                    "0"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\" : au-dessus de la moyenne\"",
+                    "1"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

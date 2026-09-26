@@ -42,8 +42,8 @@
         {
           "type": 1,
           "params": [
-            "LISTE",
-            "production_jour"
+            "NOMBRE",
+            "production"
           ],
           "children": []
         },
@@ -52,14 +52,6 @@
           "params": [
             "NOMBRE",
             "total"
-          ],
-          "children": []
-        },
-        {
-          "type": 1,
-          "params": [
-            "NOMBRE",
-            "moyenne"
           ],
           "children": []
         }
@@ -71,55 +63,6 @@
         "debutalgo"
       ],
       "children": [
-        {
-          "type": 12,
-          "params": [
-            "jour",
-            "0",
-            "6",
-            "1"
-          ],
-          "children": [
-            {
-              "type": 13,
-              "params": [
-                "debutpour"
-              ],
-              "children": []
-            },
-            {
-              "type": 20,
-              "params": [
-                "\"Jour \"",
-                "0"
-              ],
-              "children": []
-            },
-            {
-              "type": 20,
-              "params": [
-                "jour + 1",
-                "1"
-              ],
-              "children": []
-            },
-            {
-              "type": 2,
-              "params": [
-                "production_jour",
-                "jour"
-              ],
-              "children": []
-            },
-            {
-              "type": 14,
-              "params": [
-                "finpour"
-              ],
-              "children": []
-            }
-          ]
-        },
         {
           "type": 5,
           "params": [
@@ -133,8 +76,8 @@
           "type": 12,
           "params": [
             "jour",
-            "0",
-            "6",
+            "1",
+            "7",
             "1"
           ],
           "children": [
@@ -146,10 +89,50 @@
               "children": []
             },
             {
+              "type": 20,
+              "params": [
+                "\"Production du jour \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "jour",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\" : \"",
+                "0"
+              ],
+              "children": []
+            },
+            {
+              "type": 2,
+              "params": [
+                "production",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "production",
+                "1"
+              ],
+              "children": []
+            },
+            {
               "type": 5,
               "params": [
                 "total",
-                "total + production_jour[jour]",
+                "total + production",
                 "pasliste"
               ],
               "children": []
@@ -164,15 +147,6 @@
           ]
         },
         {
-          "type": 5,
-          "params": [
-            "moyenne",
-            "total / 7",
-            "pasliste"
-          ],
-          "children": []
-        },
-        {
           "type": 20,
           "params": [
             "\"Moyenne : \"",
@@ -183,7 +157,7 @@
         {
           "type": 20,
           "params": [
-            "moyenne",
+            "total / 7",
             "1"
           ],
           "children": []

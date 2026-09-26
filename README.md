@@ -2,7 +2,7 @@
 
 Apprendre à réaliser un algorithme, ou comment résoudre un problème en structurant la mise en oeuvre d'une solution.
 
-Le cours part d'exemples de la vie courante, introduit le vocabulaire et le pseudo-code, puis met en pratique chaque notion (variables, conditions, boucles, tableaux, fonctions, chaînes de caractères) avec **AlgoFab**.
+Le cours part d'exemples de la vie courante, introduit le vocabulaire et le pseudo-code, puis met en pratique chaque notion (variables, conditions, boucles, tableaux, fonctions, chaînes de caractères) avec **AlgoFab**, avant d'apprendre à évaluer un algorithme (complexité).
 
 ---
 
@@ -13,7 +13,7 @@ Le cours part d'exemples de la vie courante, introduit le vocabulaire et le pseu
 Le travail se fait en trois étapes :
 
 1. **Coder** : construire l'algorithme en insérant des blocs
-2. **Vérifier** : l'application repère les erreurs avant l'exécution (variable non déclarée, variable utilisée sans valeur, type incorrect...) et explique comment les corriger
+2. **Vérifier** : l'application repère les erreurs avant l'exécution (variable non déclarée, variable utilisée sans valeur, type incorrect...) et explique comment les corriger ; elle estime aussi la complexité (chapitres 12 et 13)
 3. **Exécuter** : la console affiche le résultat ; l'exécution pas à pas permet de suivre l'évolution des variables
 
 Les exemples et les solutions du cours sont des fichiers `.algo` : dans AlgoFab, menu **Algorithmes → Ouvrir algo**. La référence complète du langage est accessible par le bouton **Aide** de l'application.
@@ -22,41 +22,40 @@ Les exemples et les solutions du cours sont des fichiers `.algo` : dans AlgoFab,
 
 ## Plan du cours
 
-| Chapitre | Contenu |
-|----------|---------|
-| [01 - Introduction à l'algorithmie](01_introduction_algorithmie.md) | Objectifs, exemple concret, généralisation, complexité |
-| [02 - Quelques définitions](02_definitions_vocabulaire.md) | Lexique informatique, vocabulaire du développeur, modes d'exécution |
-| [03 - Le pseudo code](03_pseudo_code.md) | Conventions, opérateurs, exemple |
-| [04 - L'algorithme](04_algorithme_methodologie.md) | Analyse descendante, structures, syntaxe globale AlgoFab |
-| [05 - Les variables](05_variables.md) | Déclaration, types (NOMBRE, CHAINE, BOOLEEN, LISTE), affectation, constantes |
-| [06 - Lecture et écriture](06_lecture_ecriture.md) | LIRE, AFFICHER |
-| [07 - Structures conditionnelles](07_structures_conditionnelles.md) | SI / ALORS / SINON, comparaisons, ET / OU / NON, TERMINER / ERREUR |
-| [08 - Structures itératives](08_structures_iteratives.md) | POUR, PAR_PAS_DE, TANT_QUE, FAIRE ... TANT_QUE |
-| [09 - Les tableaux](09_tableaux.md) | LISTE, indices, remplissage, parcours, tableau à 2 dimensions |
-| [10 - Les fonctions](10_fonctions.md) | Fonctions intégrées, fonctions utilisateur |
-| [11 - Chaînes de caractères](11_chaines_de_caracteres.md) | Concaténation, substr, tostring, length, charat, asc, char, table ASCII |
-| [12 - Complexité algorithmique](12_complexite_algorithmique.md) | Notation grand O, meilleur / pire cas, complexité spatiale |
-| [13 - Complexité cyclomatique](13_complexite_cyclomatique.md) | Calcul, interprétation, réduction, lien avec les tests |
+Chaque chapitre ne s'appuie que sur les précédents et se termine par une fiche d'exercices.
 
----
+```mermaid
+flowchart TD
+    subgraph comprendre["1. Comprendre"]
+        direction LR
+        c01[01 Introduction] --> c02[02 Définitions] --> c03[03 Pseudo code] --> c04[04 Méthode]
+    end
+    subgraph programmer["2. Programmer avec AlgoFab"]
+        direction LR
+        c05[05 Variables] --> c06[06 Lecture, calculs, écriture] --> c07[07 Conditions] --> c08[08 Boucles]
+        c08 --> c09[09 Tableaux] --> c10[10 Fonctions] --> c11[11 Chaînes]
+    end
+    subgraph evaluer["3. Évaluer un algorithme"]
+        direction LR
+        c12[12 Complexité algorithmique] --> c13[13 Complexité cyclomatique]
+    end
+    comprendre --> programmer --> evaluer
+```
 
-## Exemples
+| Chapitre | Contenu | Exercices |
+|----------|---------|-----------|
+| [01 - Introduction à l'algorithmie](01_introduction_algorithmie.md) | Définition, exemple concret, généralisation, qualités d'un algorithme | |
+| [02 - Quelques définitions](02_definitions_vocabulaire.md) | Du problème au programme, lexique informatique, modes d'exécution | |
+| [03 - Le pseudo code](03_pseudo_code.md) | Conventions, correspondance avec AlgoFab, organigramme | [fiche 03](exercices/03_pseudo_code.md) |
+| [04 - L'algorithme](04_algorithme_methodologie.md) | Analyse descendante, trois structures, syntaxe globale AlgoFab | [fiche 04](exercices/04_algorithme.md) |
+| [05 - Les variables](05_variables.md) | Déclaration, types (NOMBRE, CHAINE, BOOLEEN, LISTE), affectation, tableau de trace, constantes | [fiche 05](exercices/05_variables.md) |
+| [06 - Lecture, calculs et écriture](06_lecture_ecriture.md) | LIRE, opérateurs, fonctions intégrées, conversions, AFFICHER | [fiche 06](exercices/06_lecture_ecriture.md) |
+| [07 - Structures conditionnelles](07_structures_conditionnelles.md) | SI / ALORS / SINON, comparaisons, ET / OU / NON, SI imbriqués, TERMINER / ERREUR | [fiche 07](exercices/07_conditions.md) |
+| [08 - Structures itératives](08_structures_iteratives.md) | POUR, PAR_PAS_DE, TANT_QUE, FAIRE ... TANT_QUE, accumulateur, boucles imbriquées | [fiche 08](exercices/08_boucles.md) |
+| [09 - Les tableaux](09_tableaux.md) | LISTE, indices, parcours, recherche, tri par sélection, tableau à 2 dimensions | [fiche 09](exercices/09_tableaux.md) |
+| [10 - Les fonctions](10_fonctions.md) | Fonctions utilisateur : paramètres, RENVOYER, portée, récursivité | [fiche 10](exercices/10_fonctions.md) |
+| [11 - Chaînes de caractères](11_chaines_de_caracteres.md) | length, substr, charat, asc, char, parcours, tests sur les caractères, table ASCII | [fiche 11](exercices/11_chaines.md) |
+| [12 - Complexité algorithmique](12_complexite_algorithmique.md) | Notation grand O, règles de calcul, meilleur / pire cas, complexité spatiale, mesure | [fiche 12](exercices/12_complexite_algorithmique.md) |
+| [13 - Complexité cyclomatique](13_complexite_cyclomatique.md) | Calcul, graphe de flot, interprétation, réduction, lien avec les tests | [fiche 13](exercices/13_complexite_cyclomatique.md) |
 
-Le dossier [exemples](exemples/) contient les algorithmes présentés dans le cours, préfixés par le numéro du chapitre :
-
-| Chapitre | Fichiers |
-|----------|----------|
-| 04 | [04_tension.algo](exemples/04_tension.algo) |
-| 05 | [05_variables.algo](exemples/05_variables.algo) |
-| 06 | [06_lecture_ecriture.algo](exemples/06_lecture_ecriture.algo) |
-| 07 | [07_si_sinon.algo](exemples/07_si_sinon.algo), [07_comparaison_chaines.algo](exemples/07_comparaison_chaines.algo), [07_conditions_composees.algo](exemples/07_conditions_composees.algo), [07_terminer_erreur.algo](exemples/07_terminer_erreur.algo) |
-| 08 | [08_pour_production.algo](exemples/08_pour_production.algo), [08_pour_pas.algo](exemples/08_pour_pas.algo), [08_tant_que_mot_de_passe.algo](exemples/08_tant_que_mot_de_passe.algo), [08_faire_tant_que_saisie.algo](exemples/08_faire_tant_que_saisie.algo) |
-| 09 | [09_tableau_moyenne.algo](exemples/09_tableau_moyenne.algo) |
-| 10 | [10_fonctions_utilisateur.algo](exemples/10_fonctions_utilisateur.algo) |
-| 11 | [11_concatenation.algo](exemples/11_concatenation.algo), [11_substr.algo](exemples/11_substr.algo), [11_tostring.algo](exemples/11_tostring.algo), [11_length.algo](exemples/11_length.algo), [11_asc.algo](exemples/11_asc.algo), [11_char.algo](exemples/11_char.algo), [11_extract_chaine.algo](exemples/11_extract_chaine.algo) |
-
----
-
-## Exercices
-
-Le dossier [exercices](exercices/) contient les énoncés et les solutions `.algo` : voir [exercices/README.md](exercices/README.md).
+Les algorithmes présentés dans le cours sont dans le dossier [exemples](exemples/), préfixés par le numéro du chapitre. Les exercices, leur progression et les solutions : [exercices/README.md](exercices/README.md).

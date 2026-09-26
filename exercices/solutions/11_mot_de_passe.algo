@@ -1,0 +1,531 @@
+{
+  "format": 3,
+  "titre": "11_mot_de_passe",
+  "sujet": "",
+  "params": {
+    "arrondiAuto": true,
+    "maxBoucle": 500000,
+    "totalBoucles": 5000000,
+    "totalAffichages": 1000,
+    "nbDecimales": 8,
+    "typeNommage": "snake_case"
+  },
+  "tree": [
+    {
+      "type": 200,
+      "params": [
+        "declarationfonctions"
+      ],
+      "children": [
+        {
+          "type": 201,
+          "params": [
+            "est_symbole",
+            "caractere:CHAINE",
+            "BOOLEEN"
+          ],
+          "children": [
+            {
+              "type": 202,
+              "params": [
+                "declarationsvariablesfonction"
+              ],
+              "children": [
+                {
+                  "type": 1,
+                  "params": [
+                    "NOMBRE",
+                    "i"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 203,
+              "params": [
+                "debutfonction"
+              ],
+              "children": []
+            },
+            {
+              "type": 12,
+              "params": [
+                "i",
+                "0",
+                "length(SYMBOLES) - 1",
+                "1"
+              ],
+              "children": [
+                {
+                  "type": 13,
+                  "params": [
+                    "debutpour"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 6,
+                  "params": [
+                    "charat(SYMBOLES, i) == caractere"
+                  ],
+                  "children": [
+                    {
+                      "type": 7,
+                      "params": [
+                        "debutsi"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 205,
+                      "params": [
+                        "VRAI"
+                      ],
+                      "children": []
+                    },
+                    {
+                      "type": 8,
+                      "params": [
+                        "finsi"
+                      ],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": 14,
+                  "params": [
+                    "finpour"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 205,
+              "params": [
+                "FAUX"
+              ],
+              "children": []
+            },
+            {
+              "type": 204,
+              "params": [
+                "finfonction"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 103,
+      "params": [
+        "declarationsconstantes"
+      ],
+      "children": [
+        {
+          "type": 26,
+          "params": [
+            "CHAINE",
+            "SYMBOLES",
+            "\"+-*/\""
+          ],
+          "children": []
+        },
+        {
+          "type": 26,
+          "params": [
+            "NOMBRE",
+            "LONGUEUR_MIN",
+            "8"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 100,
+      "params": [
+        "declarationsvariables"
+      ],
+      "children": [
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "mot_de_passe"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "CHAINE",
+            "caractere"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "i"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_majuscules"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_minuscules"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_chiffres"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "NOMBRE",
+            "nb_symboles"
+          ],
+          "children": []
+        },
+        {
+          "type": 1,
+          "params": [
+            "BOOLEEN",
+            "valide"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": 101,
+      "params": [
+        "debutalgo"
+      ],
+      "children": [
+        {
+          "type": 20,
+          "params": [
+            "\"Mot de passe : \"",
+            "0"
+          ],
+          "children": []
+        },
+        {
+          "type": 2,
+          "params": [
+            "mot_de_passe",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 20,
+          "params": [
+            "mot_de_passe",
+            "1"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "nb_majuscules",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "nb_minuscules",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "nb_chiffres",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "nb_symboles",
+            "0",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 12,
+          "params": [
+            "i",
+            "0",
+            "length(mot_de_passe) - 1",
+            "1"
+          ],
+          "children": [
+            {
+              "type": 13,
+              "params": [
+                "debutpour"
+              ],
+              "children": []
+            },
+            {
+              "type": 5,
+              "params": [
+                "caractere",
+                "charat(mot_de_passe, i)",
+                "pasliste"
+              ],
+              "children": []
+            },
+            {
+              "type": 6,
+              "params": [
+                "caractere >= \"A\" ET caractere <= \"Z\""
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "nb_majuscules",
+                    "nb_majuscules + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 6,
+              "params": [
+                "caractere >= \"a\" ET caractere <= \"z\""
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "nb_minuscules",
+                    "nb_minuscules + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 6,
+              "params": [
+                "caractere >= \"0\" ET caractere <= \"9\""
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "nb_chiffres",
+                    "nb_chiffres + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 6,
+              "params": [
+                "est_symbole(caractere)"
+              ],
+              "children": [
+                {
+                  "type": 7,
+                  "params": [
+                    "debutsi"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 5,
+                  "params": [
+                    "nb_symboles",
+                    "nb_symboles + 1",
+                    "pasliste"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 8,
+                  "params": [
+                    "finsi"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": 14,
+              "params": [
+                "finpour"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": 19,
+          "params": [
+            "un caractère interdit n'entre dans aucun des quatre compteurs"
+          ],
+          "children": []
+        },
+        {
+          "type": 5,
+          "params": [
+            "valide",
+            "nb_majuscules >= 2 ET nb_minuscules >= 2 ET nb_chiffres >= 1 ET nb_symboles >= 1 ET length(mot_de_passe) > LONGUEUR_MIN ET nb_majuscules + nb_minuscules + nb_chiffres + nb_symboles == length(mot_de_passe)",
+            "pasliste"
+          ],
+          "children": []
+        },
+        {
+          "type": 6,
+          "params": [
+            "valide"
+          ],
+          "children": [
+            {
+              "type": 7,
+              "params": [
+                "debutsi"
+              ],
+              "children": []
+            },
+            {
+              "type": 20,
+              "params": [
+                "\"Mot de passe valide\"",
+                "1"
+              ],
+              "children": []
+            },
+            {
+              "type": 8,
+              "params": [
+                "finsi"
+              ],
+              "children": []
+            },
+            {
+              "type": 9,
+              "params": [
+                "sinon"
+              ],
+              "children": [
+                {
+                  "type": 10,
+                  "params": [
+                    "debutsinon"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 20,
+                  "params": [
+                    "\"Mot de passe refusé\"",
+                    "1"
+                  ],
+                  "children": []
+                },
+                {
+                  "type": 11,
+                  "params": [
+                    "finsinon"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": 102,
+      "params": [
+        "finalgo"
+      ],
+      "children": []
+    }
+  ]
+}

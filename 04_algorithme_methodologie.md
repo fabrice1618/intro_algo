@@ -19,40 +19,62 @@ L'analyse descendante consiste à décomposer un problème complexe en sous-prob
 3. **Recomposition** des algorithmes (Algo 1, ..., Algo X)
 4. Obtention de l'**algorithme principal** et de la résolution
 
----
+Exemple : gérer les notes d'une classe.
 
-## 3. Objectifs de la méthodologie de conception
+```mermaid
+flowchart TD
+    pb["Gérer les notes d'une classe"] --> s1[Saisir les notes]
+    pb --> s2[Calculer les résultats]
+    pb --> s3[Afficher les résultats]
+    s1 --> s11[Lire un prénom]
+    s1 --> s12["Lire une note, vérifier qu'elle est entre 0 et 20"]
+    s2 --> s21[Calculer la moyenne]
+    s2 --> s22[Trouver la meilleure note]
+```
 
-### Modularité
+On décompose jusqu'à obtenir des sous-problèmes assez simples pour être écrits directement. Ce problème est l'exercice « Moyenne de la classe » du chapitre 08 ; au chapitre 10, chaque sous-problème pourra devenir une **fonction**.
 
-- 1 problème simple = 1 algorithme simple
-- Réutilisable
+Objectifs de la méthode :
 
-### Lisibilité
-
-- Mise en page
-- Commentaires
-- Description
-
-### Complexité
-
-- Enchaînements
-- Mesure de la durée d'exécution
-- Mesure de l'espace mémoire
-
----
-
-## 4. Les structures
-
-| Structure | Description |
-|-----------|-------------|
-| **Séquentielle** | Ordonnancement des instructions |
-| **Conditionnelle** | Bloc d'instructions à exécuter selon circonstances |
-| **Itérative** | Bloc d'instructions à exécuter plusieurs fois |
+- **Modularité** : 1 problème simple = 1 algorithme simple, réutilisable
+- **Lisibilité** : mise en page, commentaires, description
+- **Complexité maîtrisée** : enchaînements simples, durée d'exécution et espace mémoire mesurables (chapitres 12 et 13)
 
 ---
 
-## 5. Syntaxe globale AlgoFab
+## 3. Les structures
+
+Tout algorithme se construit avec trois structures :
+
+| Structure | Description | Chapitres |
+|-----------|-------------|-----------|
+| **Séquentielle** | Ordonnancement des instructions | 05, 06 |
+| **Conditionnelle** | Bloc d'instructions à exécuter selon circonstances | 07 |
+| **Itérative** | Bloc d'instructions à exécuter plusieurs fois | 08 |
+
+```mermaid
+flowchart LR
+    subgraph sequentielle[Séquentielle]
+        direction TB
+        i1[Instruction 1] --> i2[Instruction 2] --> i3[Instruction 3]
+    end
+    subgraph conditionnelle[Conditionnelle]
+        direction TB
+        c{Condition ?} -- vrai --> ba[Bloc A]
+        c -- faux --> bb[Bloc B]
+    end
+    subgraph iterative[Itérative]
+        direction TB
+        t{Continuer ?} -- oui --> corps[Bloc répété]
+        corps --> t
+        t -- non --> suite[Suite]
+    end
+    sequentielle ~~~ conditionnelle ~~~ iterative
+```
+
+---
+
+## 4. Syntaxe globale AlgoFab
 
 ### Écriture
 
@@ -89,13 +111,14 @@ FIN_ALGORITHME
 
 Fichier : [exemples/04_tension.algo](exemples/04_tension.algo)
 
+C'est une simple **séquence** : trois affectations (`PREND_LA_VALEUR`, chapitre 05) puis un affichage (`AFFICHER`, chapitre 06).
+
 > Dans les exemples du cours, les sections vides (`FONCTIONS_UTILISEES`, `CONSTANTES`) ne sont pas recopiées.
+
+Pour ouvrir un fichier `.algo` dans AlgoFab et l'exécuter : voir la présentation d'[AlgoFab](README.md#algofab).
 
 ---
 
-## 6. AlgoFab
+## Exercices
 
-- Application web : https://algofab.mips.science
-- Ouvrir un exemple du cours : menu **Algorithmes → Ouvrir algo**, puis choisir un fichier `.algo`
-- Le travail se fait en trois étapes : **Coder** (construire l'arbre de blocs), **Vérifier** (l'application signale les erreurs avant l'exécution), **Exécuter** (la console affiche le résultat)
-- Documentation : bouton **Aide** de l'application (référence du langage et des fonctions intégrées)
+Fiche [exercices/04_algorithme.md](exercices/04_algorithme.md) : décomposer un problème, reconnaître les structures, premier algorithme dans AlgoFab.

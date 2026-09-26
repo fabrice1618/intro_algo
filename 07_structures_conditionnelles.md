@@ -21,6 +21,16 @@ SI <CONDITION> ALORS
 
 Le bloc **SINON** est facultatif (case « Ajouter SINON » du bloc `SI` dans AlgoFab). Les marqueurs `DEBUT_SI` / `FIN_SI` sont ajoutés automatiquement par l'application : on place les instructions entre les deux.
 
+Un seul des deux blocs est exécuté, puis l'algorithme continue après le `SI` :
+
+```mermaid
+flowchart TD
+    si{"temperature < 50 ?"} -- vrai --> alors[Afficher OK]
+    si -- faux --> sinon[Afficher Arrêt système]
+    alors --> suite[Suite de l'algorithme]
+    sinon --> suite
+```
+
 ### Exemple
 
 ```
@@ -64,6 +74,8 @@ Une condition est composée de :
 
 > Attention : « est égal à » s'écrit `==`. Un `=` seul n'existe pas dans le langage (l'affectation se fait avec `PREND_LA_VALEUR`).
 
+Les chaînes se comparent dans l'ordre alphabétique, caractère par caractère, selon leur code ASCII : `"A" < "B"`, mais aussi `"Z" < "a"` (majuscules avant minuscules).
+
 ### Exemple
 
 ```
@@ -88,7 +100,14 @@ Fichier : [exemples/07_comparaison_chaines.algo](exemples/07_comparaison_chaines
 
 ---
 
-## 3. Conditions composées (ET / OU)
+## 3. Conditions composées (ET / OU / NON)
+
+| A | B | A `ET` B | A `OU` B |
+|---|---|----------|----------|
+| VRAI | VRAI | VRAI | VRAI |
+| VRAI | FAUX | FAUX | VRAI |
+| FAUX | VRAI | FAUX | VRAI |
+| FAUX | FAUX | FAUX | FAUX |
 
 ### ET
 
@@ -122,13 +141,58 @@ SINON
 
 Fichier : [exemples/07_conditions_composees.algo](exemples/07_conditions_composees.algo)
 
+Les deux tests sont équivalents : le contraire de « A ET B » est « (contraire de A) OU (contraire de B) ».
+
 ### NON
 
 `NON` inverse une condition : `NON (temperature < 50)` est vrai quand `temperature >= 50`.
 
+> Une condition longue gagne à être rangée dans une variable `BOOLEEN` au nom explicite : `surchauffe PREND_LA_VALEUR temperature >= 50`, puis `SI (surchauffe OU surpression) ALORS`.
+
 ---
 
-## 4. Arrêter l'algorithme : TERMINER / ERREUR
+## 4. Plusieurs cas : SI imbriqués
+
+Pour choisir entre plus de deux cas, on place un `SI` dans le `SINON` du précédent. Les tests sont faits dans l'ordre : on n'arrive au deuxième que si le premier est faux.
+
+```mermaid
+flowchart TD
+    t1{"age < 12 ?"} -- vrai --> enfant[Tarif enfant]
+    t1 -- faux --> t2{"age < 65 ?"}
+    t2 -- vrai --> plein[Tarif plein]
+    t2 -- faux --> senior[Tarif senior]
+```
+
+```
+VARIABLES
+  age EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE age
+  SI (age < 12) ALORS
+    DEBUT_SI
+    AFFICHER "Tarif enfant" ↵
+    FIN_SI
+  SINON
+    DEBUT_SINON
+    SI (age < 65) ALORS
+      DEBUT_SI
+      AFFICHER "Tarif plein" ↵
+      FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER "Tarif senior" ↵
+      FIN_SINON
+    FIN_SINON
+FIN_ALGORITHME
+```
+
+Fichier : [exemples/07_si_imbrique.algo](exemples/07_si_imbrique.algo)
+
+Dans le deuxième test, inutile d'écrire `age >= 12 ET age < 65` : si on y arrive, `age >= 12` est déjà acquis.
+
+---
+
+## 5. Arrêter l'algorithme : TERMINER / ERREUR
 
 Deux blocs arrêtent l'exécution **immédiatement**, où qu'ils se trouvent :
 
@@ -161,3 +225,9 @@ FIN_ALGORITHME
 ```
 
 Fichier : [exemples/07_terminer_erreur.algo](exemples/07_terminer_erreur.algo)
+
+---
+
+## Exercices
+
+Fiche [exercices/07_conditions.md](exercices/07_conditions.md) : pair ou impair, comparaisons, température système, maintenance.
